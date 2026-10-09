@@ -1,0 +1,923 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Services - Maison Ros&eacute;e</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+  <script src="tailwind-config.js"></script>
+    <link rel="stylesheet" href="premium-animations.css">
+    <!-- Font Awesome & Google Material Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons|Material+Symbols+Outlined" />
+</head>
+<body class="bg-[#FDF9F2] text-[#38251E] font-sans antialiased overflow-x-clip pt-[72px] md:pt-[80px]">
+
+  <!-- Luxury Stackly Preloader -->
+  <div id="preloader" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: 9999999; background-color: #FDF9F2; display: flex; flex-direction: column; align-items: center; justify-content: center; user-select: none;">
+    <style>
+      @keyframes stFloat {
+        0%, 100% { transform: translateY(0); }
+        50% { transform: translateY(-7px); }
+      }
+      @keyframes stRotate {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+      }
+      @keyframes stDrop {
+        0% { transform: translateY(0) scale(0.6); opacity: 0; }
+        25% { opacity: 1; }
+        70% { transform: translateY(12px) scale(1); opacity: 0.9; }
+        100% { transform: translateY(16px) scale(0.3); opacity: 0; }
+      }
+      @keyframes stRipple {
+        0% { transform: scale(0.2); opacity: 0; }
+        35% { opacity: 0.9; }
+        100% { transform: scale(2.4); opacity: 0; }
+      }
+      @keyframes stPulse {
+        0%, 100% { transform: scale(0.92); opacity: 0.35; }
+        50% { transform: scale(1.18); opacity: 0.85; }
+      }
+      @keyframes stSparkle {
+        0%, 100% { transform: scale(0.3) rotate(0deg); opacity: 0.2; }
+        50% { transform: scale(1.2) rotate(45deg); opacity: 1; }
+      }
+      @keyframes stProgress {
+        0% { transform: translateX(-100%); width: 30%; }
+        50% { transform: translateX(30%); width: 70%; }
+        100% { transform: translateX(200%); width: 40%; }
+      }
+      .st-bottle { animation: stFloat 2.6s ease-in-out infinite; transform-origin: center; }
+      .st-ring { animation: stRotate 14s linear infinite; transform-origin: 60px 58px; }
+      .st-drop { animation: stDrop 1.8s ease-in infinite; transform-origin: 60px 88px; }
+      .st-ripple { animation: stRipple 1.8s ease-out infinite; transform-origin: 60px 104px; }
+      .st-aura { animation: stPulse 2.4s ease-in-out infinite; transform-origin: 60px 58px; }
+      .st-sparkle-1 { animation: stSparkle 1.8s ease-in-out infinite; transform-origin: 28px 28px; }
+      .st-sparkle-2 { animation: stSparkle 2.2s ease-in-out infinite 0.6s; transform-origin: 94px 34px; }
+      .st-sparkle-3 { animation: stSparkle 1.9s ease-in-out infinite 1.1s; transform-origin: 90px 78px; }
+      .st-progress-bar { animation: stProgress 1.6s cubic-bezier(0.4, 0, 0.2, 1) infinite; }
+    
+        @keyframes luxuryNeonGlow {
+            0% {
+                box-shadow: 0 0 4px rgba(197, 154, 101, 0.5), 0 0 10px rgba(197, 154, 101, 0.3), inset 0 0 4px rgba(197, 154, 101, 0.2);
+                border-color: rgba(197, 154, 101, 0.5);
+            }
+            50% {
+                box-shadow: 0 0 12px rgba(197, 154, 101, 0.9), 0 0 20px rgba(197, 154, 101, 0.6), inset 0 0 8px rgba(197, 154, 101, 0.4);
+                border-color: rgba(197, 154, 101, 1);
+            }
+            100% {
+                box-shadow: 0 0 4px rgba(197, 154, 101, 0.5), 0 0 10px rgba(197, 154, 101, 0.3), inset 0 0 4px rgba(197, 154, 101, 0.2);
+                border-color: rgba(197, 154, 101, 0.5);
+            }
+        }
+        .luxury-neon-border {
+            border: 2px solid rgba(197, 154, 101, 0.5);
+            animation: luxuryNeonGlow 2.5s infinite alternate ease-in-out;
+            position: relative;
+        }
+    </style>
+
+    <div style="display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center;">
+      
+      <!-- Animated Cosmetics SVG Illustration -->
+      <div style="position: relative; width: 130px; height: 130px; display: flex; align-items: center; justify-content: center; margin-bottom: 12px;">
+        <svg style="width: 100%; height: 100%; overflow: visible;" viewBox="0 0 120 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="stGold" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#E5C596"/>
+              <stop offset="50%" stop-color="#C59A65"/>
+              <stop offset="100%" stop-color="#9A723D"/>
+            </linearGradient>
+            <linearGradient id="stGlass" x1="0%" y1="0%" x2="100%" y2="0%">
+              <stop offset="0%" stop-color="rgba(255,255,255,0.95)"/>
+              <stop offset="50%" stop-color="rgba(253,249,242,0.7)"/>
+              <stop offset="100%" stop-color="rgba(238,216,182,0.9)"/>
+            </linearGradient>
+            <radialGradient id="stAuraGlow" cx="50%" cy="50%" r="50%">
+              <stop offset="0%" stop-color="#C59A65" stop-opacity="0.4"/>
+              <stop offset="100%" stop-color="#C59A65" stop-opacity="0"/>
+            </radialGradient>
+          </defs>
+
+          <!-- Ambient Aura Glow -->
+          <circle cx="60" cy="58" r="46" fill="url(#stAuraGlow)" class="st-aura" />
+
+          <!-- Rotating Gold Orbital Ring -->
+          <circle cx="60" cy="58" r="48" stroke="#C59A65" stroke-width="1.5" stroke-dasharray="6 8" stroke-opacity="0.6" class="st-ring" />
+
+          <!-- Floating Cosmetics Bottle -->
+          <g class="st-bottle">
+            <!-- Dropper bulb -->
+            <path d="M54 26 C54 18 57 15 60 15 C63 15 66 18 66 26 Z" fill="#38251E" />
+            <ellipse cx="60" cy="15" rx="3.5" ry="1.5" fill="#523930" />
+            
+            <!-- Gold Collar Ring -->
+            <rect x="52" y="26" width="16" height="8" rx="1.5" fill="url(#stGold)" stroke="#8A6432" stroke-width="0.5" />
+            
+            <!-- Glass Pipette inside -->
+            <line x1="60" y1="34" x2="60" y2="70" stroke="rgba(255,255,255,0.9)" stroke-width="2.5" stroke-linecap="round"/>
+
+            <!-- Bottle Body -->
+            <rect x="43" y="34" width="34" height="48" rx="11" fill="url(#stGlass)" stroke="#C59A65" stroke-width="1.5" />
+
+            <!-- Golden Liquid Inside -->
+            <rect x="46" y="47" width="28" height="32" rx="7" fill="#C59A65" opacity="0.38" />
+            <path d="M46 51 Q60 47 74 51 L74 47 Q60 43 46 47 Z" fill="#FFECCE" opacity="0.75"/>
+
+            <!-- Glass highlight streak -->
+            <path d="M47 38 L47 78" stroke="rgba(255,255,255,0.85)" stroke-width="2" stroke-linecap="round" />
+          </g>
+
+          <!-- Dripping Golden Essence Droplet -->
+          <g class="st-droplet-group">
+            <path d="M60 88 C58.5 91 57 93.5 60 96 C63 93.5 61.5 91 60 88 Z" fill="#C59A65" class="st-drop" />
+            <ellipse cx="60" cy="104" rx="8" ry="2.5" fill="none" stroke="#C59A65" stroke-width="1.5" class="st-ripple" />
+          </g>
+
+          <!-- Sparkling Stars -->
+          <path d="M28 28 Q28 32 32 32 Q28 32 28 36 Q28 32 24 32 Q28 32 28 28 Z" fill="#C59A65" class="st-sparkle-1" />
+          <path d="M94 34 Q94 37 97 37 Q94 37 94 40 Q94 37 91 37 Q94 37 94 34 Z" fill="#E5C596" class="st-sparkle-2" />
+          <circle cx="90" cy="78" r="2" fill="#C59A65" class="st-sparkle-3" />
+        </svg>
+      </div>
+
+      <!-- Embedded Instant-Load Stackly Brand Logo -->
+      <div style="margin-bottom: 6px; display: flex; align-items: center; justify-content: center;">
+        <img src="data:image/webp;base64,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" alt="Stackly" style="height: 44px; width: auto; object-fit: contain; filter: drop-shadow(0 2px 8px rgba(56, 37, 30, 0.12));" />
+      </div>
+
+      <!-- Luxury Brand Subtitle -->
+      <p style="font-family: 'Inter', system-ui, sans-serif; font-size: 11px; font-weight: 600; letter-spacing: 0.35em; color: #C59A65; text-transform: uppercase; margin: 4px 0 0 0;">
+        Beauty &bull; Cosmetics
+      </p>
+
+      <!-- Animated Shimmer Progress Bar -->
+      <div style="width: 170px; height: 3px; background: rgba(56, 37, 30, 0.12); border-radius: 9999px; margin-top: 16px; overflow: hidden; position: relative;">
+        <div class="st-progress-bar" style="height: 100%; background: linear-gradient(90deg, #C59A65 0%, #E8D1A7 50%, #C59A65 100%); border-radius: 9999px;"></div>
+      </div>
+
+    </div>
+  </div>
+
+
+    <!-- Fixed Luxury Navbar -->
+  <header class="site-header fixed top-0 left-0 z-50 w-full bg-[#FDF9F2]/95 backdrop-blur-md border-b border-[#38251E]/10 transition-all duration-300">
+    <nav class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+        <!-- Logo -->
+        <div class="flex items-center cursor-pointer">
+            <a href="index.html" class="flex items-center">
+                <img src="assets/logo_0027.webp" alt="Stackly Logo" class="h-10 md:h-12 w-auto object-contain" />
+            </a>
+        </div>
+        
+        <!-- Links -->
+        <div class="hidden md:flex items-center gap-8 text-[15px] font-medium">
+            <a href="index.html" class="text-gray-900 transition hover:text-[#ceab7e] font-medium">Home</a>
+            <a href="about.html" class="text-gray-900 transition hover:text-[#ceab7e] font-medium">About</a>
+            <a href="services.html" class="text-[#ceab7e] transition hover:opacity-70 font-semibold">Services</a>
+            <a href="blog.html" class="text-gray-900 transition hover:text-[#ceab7e] font-medium">Blog</a>
+            <a href="contact.html" class="text-gray-900 transition hover:text-[#ceab7e] font-medium">Contact</a>
+
+    </div>
+
+        <!-- Actions -->
+        <div class="flex items-center gap-3">
+            <a href="login.html" class="bg-[#38302A] text-white px-6 py-2.5 text-sm font-medium rounded-md hover:bg-black transition hidden md:inline-block">Register</a>
+            <!-- Mobile Menu Toggle Button -->
+            <button id="mobile-menu-toggle" type="button" class="md:hidden text-[#38251E] p-2 rounded-lg hover:bg-[#38251E]/5 transition" aria-label="Toggle navigation">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Mobile Dropdown Menu -->
+    <div id="mobile-menu" class="w-full hidden md:hidden absolute left-0 top-full h-[calc(100vh-70px)] border-t border-[#38251E]/10 bg-[#FDF9F2] px-8 py-10 space-y-6 shadow-lg overflow-y-auto">
+        <a href="index.html" class="block text-[18px] font-medium text-gray-900 hover:text-[#ceab7e]">Home</a>
+        <a href="about.html" class="block text-[18px] font-medium text-gray-900 hover:text-[#ceab7e]">About</a>
+        <a href="services.html" class="block text-[15px] font-semibold text-[#ceab7e]">Services</a>
+        <a href="blog.html" class="block text-[18px] font-medium text-gray-900 hover:text-[#ceab7e]">Blog</a>
+        <a href="contact.html" class="block text-[18px] font-medium text-gray-900 hover:text-[#ceab7e]">Contact</a>
+        <div class="pt-6 border-t border-[#38251E]/10 mt-6">
+            <a href="login.html" class="block text-center bg-[#38302A] text-white px-6 py-2.5 text-sm font-medium rounded-md hover:bg-black transition w-full">Register</a>
+        </div>
+    </div>
+  </header>
+
+  <!-- Service Hero Section -->
+  <section class="relative w-full bg-[#FDF9F2] pt-8 pb-20 md:pt-12 md:pb-24 overflow-hidden">
+    
+    <!-- CSS for float animation -->
+    <style>
+      @keyframes float {
+        0% { transform: translateY(0px); }
+        50% { transform: translateY(-20px); }
+        100% { transform: translateY(0px); }
+      }
+      @keyframes float-reverse {
+        0% { transform: translateY(0px); }
+        50% { transform: translateY(15px); }
+        100% { transform: translateY(0px); }
+      }
+      .animate-float { animation: float 6s ease-in-out infinite; }
+      .animate-float-reverse { animation: float-reverse 7s ease-in-out infinite; }
+      .animate-float-slow { animation: float 8s ease-in-out infinite; }
+    
+        @keyframes luxuryNeonGlow {
+            0% {
+                box-shadow: 0 0 4px rgba(197, 154, 101, 0.5), 0 0 10px rgba(197, 154, 101, 0.3), inset 0 0 4px rgba(197, 154, 101, 0.2);
+                border-color: rgba(197, 154, 101, 0.5);
+            }
+            50% {
+                box-shadow: 0 0 12px rgba(197, 154, 101, 0.9), 0 0 20px rgba(197, 154, 101, 0.6), inset 0 0 8px rgba(197, 154, 101, 0.4);
+                border-color: rgba(197, 154, 101, 1);
+            }
+            100% {
+                box-shadow: 0 0 4px rgba(197, 154, 101, 0.5), 0 0 10px rgba(197, 154, 101, 0.3), inset 0 0 4px rgba(197, 154, 101, 0.2);
+                border-color: rgba(197, 154, 101, 0.5);
+            }
+        }
+        .luxury-neon-border {
+            border: 2px solid rgba(197, 154, 101, 0.5);
+            animation: luxuryNeonGlow 2.5s infinite alternate ease-in-out;
+            position: relative;
+        }
+    </style>
+
+    <!-- Background Glow -->
+    <div class="absolute inset-0 z-0 overflow-hidden pointer-events-none">
+      <div class="absolute top-1/2 left-[70%] transform -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-[#EED8B6]/40 rounded-full blur-[80px]"></div>
+    </div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+      <div class="flex flex-col md:flex-row items-center justify-between gap-12">
+        
+        <!-- Left Content -->
+        <div class="w-full md:w-5/12 z-10 relative mt-10 md:mt-0">
+          <h1 class="font-serif text-[#000000] text-[4.5rem] sm:text-[5.5rem] lg:text-[7rem] leading-[0.9] tracking-tight mb-2">
+            Expert beauty
+          </h1>
+          <h1 class="font-serif text-[#D0B286] text-[4.5rem] sm:text-[5.5rem] lg:text-[7rem] leading-[0.9] tracking-tighter mb-10">
+            made personal
+          </h1>
+          
+          <p class="font-serif text-[#38251E] text-[17px] md:text-[20px] leading-[1.6] max-w-[420px] mb-12 font-medium">
+            From a free shade match to full bridal makeup, our artists and skin specialists help you find what truly suits you, in our Madurai studio or on a video call.
+          </p>
+          
+          <a href="404.html" class="inline-block bg-[#3F2B26] text-[#FDF9F2] px-8 py-4 rounded-lg font-sans text-[15px] font-medium tracking-wide hover:bg-[#2A1B15] transition-colors shadow-lg">
+            Book a service
+          </a>
+        </div>
+
+        <!-- Right Content (Image & Floating Badges) -->
+        <div class="w-full md:w-7/12 relative flex justify-center items-center mt-12 md:mt-0 h-[450px] md:h-[650px] z-10">
+          
+          <!-- Product Image -->
+          <img src="assets/opt_b882686d.webp" alt="Perfume Product" class="w-[320px] md:w-[450px] lg:w-[500px] h-auto object-contain mix-blend-multiply drop-shadow-2xl z-10 relative left-10 animate-float-slow" style="filter: contrast(1.1) brightness(1.05);" />
+
+          <!-- Left Floating Badge -->
+          <div class="absolute left-0 md:left-4 lg:left-12 top-[40%] bg-white rounded-[24px] px-8 py-5 shadow-[0_15px_40px_-10px_rgba(0,0,0,0.15)] border border-[#38251E]/5 z-20 flex flex-col items-center animate-float-reverse" style="transform: translateY(-50%);">
+            <p class="font-serif text-[#38251E] text-xl font-medium tracking-wide mb-1">1:1 with experts</p>
+            <p class="font-serif text-[#38251E]/80 text-[13px] tracking-wide">Certified consultants</p>
+          </div>
+
+          <!-- Right Floating Badge -->
+          <div class="absolute right-0 md:right-4 lg:right-12 bottom-[15%] bg-white rounded-[24px] px-8 py-4 shadow-[0_15px_40px_-10px_rgba(0,0,0,0.15)] border border-[#38251E]/5 z-20 flex flex-col items-center animate-float">
+            <div class="flex gap-1.5 mb-2 text-[#FFB800]">
+              <!-- 5 Stars -->
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+            </div>
+            <p class="font-sans text-[#38251E]/80 text-[11px] font-medium tracking-wide uppercase">4.9 from 3,200 sessions</p>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- What We Offer Section -->
+  <section class="w-full bg-[#FDF9F2] py-20 md:py-24 border-t border-[#38251E]/10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- Header -->
+      <div class="mb-16">
+        <h2 class="font-serif text-[3.5rem] md:text-[4.5rem] text-[#38251E] leading-none tracking-tight mb-4">
+          What we <span class="text-[#D0B286]">offer</span>
+        </h2>
+        <p class="font-serif text-[#38251E] text-lg md:text-[1.15rem] font-medium max-w-2xl">
+          Six services, each led by a trained specialist and built around your skin.
+        </p>
+      </div>
+
+      <!-- Services Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+        
+        <!-- Card 1 -->
+        <div class="service-card luxury-neon-border service-card bg-white rounded-[20px] p-8 md:p-10 shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-[#38251E]/5 flex flex-col h-full transition-[border-color,shadow,transform] duration-500 hover:border-[#D0B286]/50 hover:shadow-[0_15px_35px_rgb(0,0,0,0.06)] hover:-translate-y-1">
+          <div class="w-[3.5rem] h-[3.5rem] bg-[#3F2B26] rounded-full flex items-center justify-center mb-8">
+            <span class="font-serif text-[#D0B286] text-2xl font-light">1</span>
+          </div>
+          <h3 class="font-serif text-[#38251E] text-[2rem] tracking-tight mb-4">Shade match</h3>
+          <p class="font-serif text-[#38251E] text-[15px] leading-[1.6] mb-12 flex-grow">
+            Find your exact foundation and lip shades under natural and warm light.
+          </p>
+          <p class="font-serif text-[#D0B286] text-[14px] mt-auto">Free, 20 minutes</p>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="service-card luxury-neon-border service-card bg-white rounded-[20px] p-8 md:p-10 shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-[#38251E]/5 flex flex-col h-full transition-[border-color,shadow,transform] duration-500 hover:border-[#D0B286]/50 hover:shadow-[0_15px_35px_rgb(0,0,0,0.06)] hover:-translate-y-1">
+          <div class="w-[3.5rem] h-[3.5rem] bg-[#3F2B26] rounded-full flex items-center justify-center mb-8">
+            <span class="font-serif text-[#D0B286] text-2xl font-light">2</span>
+          </div>
+          <h3 class="font-serif text-[#38251E] text-[2rem] tracking-tight mb-4">Skin analysis</h3>
+          <p class="font-serif text-[#38251E] text-[15px] leading-[1.6] mb-12 flex-grow">
+            A digital scan of hydration, oil and sensitivity, with a routine to match.
+          </p>
+          <p class="font-serif text-[#D0B286] text-[14px] mt-auto">&#8377;499, 30 minutes</p>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="service-card luxury-neon-border service-card bg-white rounded-[20px] p-8 md:p-10 shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-[#38251E]/5 flex flex-col h-full transition-[border-color,shadow,transform] duration-500 hover:border-[#D0B286]/50 hover:shadow-[0_15px_35px_rgb(0,0,0,0.06)] hover:-translate-y-1">
+          <div class="w-[3.5rem] h-[3.5rem] bg-[#3F2B26] rounded-full flex items-center justify-center mb-8">
+            <span class="font-serif text-[#D0B286] text-2xl font-light">3</span>
+          </div>
+          <h3 class="font-serif text-[#38251E] text-[2rem] tracking-tight mb-4">Makeup application</h3>
+          <p class="font-serif text-[#38251E] text-[15px] leading-[1.6] mb-12 flex-grow">
+            A full look for parties, interviews or photos, finished in 45 minutes.
+          </p>
+          <p class="font-serif text-[#D0B286] text-[14px] mt-auto">From &#8377;1,499</p>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="service-card luxury-neon-border service-card bg-white rounded-[20px] p-8 md:p-10 shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-[#38251E]/5 flex flex-col h-full transition-[border-color,shadow,transform] duration-500 hover:border-[#D0B286]/50 hover:shadow-[0_15px_35px_rgb(0,0,0,0.06)] hover:-translate-y-1">
+          <div class="w-[3.5rem] h-[3.5rem] bg-[#3F2B26] rounded-full flex items-center justify-center mb-8">
+            <span class="font-serif text-[#D0B286] text-2xl font-light">4</span>
+          </div>
+          <h3 class="font-serif text-[#38251E] text-[2rem] tracking-tight mb-4">Bridal makeup</h3>
+          <p class="font-serif text-[#38251E] text-[15px] leading-[1.6] mb-12 flex-grow">
+            A trial and wedding-day makeup that lasts through long ceremonies.
+          </p>
+          <p class="font-serif text-[#D0B286] text-[14px] mt-auto">From &#8377;9,999</p>
+        </div>
+
+        <!-- Card 5 -->
+        <div class="service-card luxury-neon-border service-card bg-white rounded-[20px] p-8 md:p-10 shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-[#38251E]/5 flex flex-col h-full transition-[border-color,shadow,transform] duration-500 hover:border-[#D0B286]/50 hover:shadow-[0_15px_35px_rgb(0,0,0,0.06)] hover:-translate-y-1">
+          <div class="w-[3.5rem] h-[3.5rem] bg-[#3F2B26] rounded-full flex items-center justify-center mb-8">
+            <span class="font-serif text-[#D0B286] text-2xl font-light">5</span>
+          </div>
+          <h3 class="font-serif text-[#38251E] text-[2rem] tracking-tight mb-4">Gifting</h3>
+          <p class="font-serif text-[#38251E] text-[15px] leading-[1.6] mb-12 flex-grow">
+            Hand-packed boxes with a handwritten note, ready to send anywhere in India.
+          </p>
+          <p class="font-serif text-[#D0B286] text-[14px] mt-auto">From &#8377;799</p>
+        </div>
+
+        <!-- Card 6 -->
+        <div class="service-card luxury-neon-border service-card bg-white rounded-[20px] p-8 md:p-10 shadow-[0_8px_30px_rgb(0,0,0,0.04)] border border-[#38251E]/5 flex flex-col h-full transition-[border-color,shadow,transform] duration-500 hover:border-[#D0B286]/50 hover:shadow-[0_15px_35px_rgb(0,0,0,0.06)] hover:-translate-y-1">
+          <div class="w-[3.5rem] h-[3.5rem] bg-[#3F2B26] rounded-full flex items-center justify-center mb-8">
+            <span class="font-serif text-[#D0B286] text-2xl font-light">6</span>
+          </div>
+          <h3 class="font-serif text-[#38251E] text-[2rem] tracking-tight mb-4">Refill club</h3>
+          <p class="font-serif text-[#38251E] text-[15px] leading-[1.6] mb-12 flex-grow">
+            Your favourites delivered every 2 or 3 months in refill pouches, saving 15%.
+          </p>
+          <p class="font-serif text-[#D0B286] text-[14px] mt-auto">Skip or cancel anytime</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Personal Beauty Consultation Section -->
+  <section class="split-reveal w-full bg-[#3F2B26] py-20 md:py-32 overflow-hidden">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col md:flex-row items-center gap-16 lg:gap-24">
+        
+        <!-- Left Image -->
+        <div class="w-full md:w-1/2 relative flex justify-center items-center">
+          <div class="relative w-full max-w-[450px] aspect-[4/5] rounded-3xl overflow-hidden shadow-2xl">
+             <!-- Glow effect behind image if it was transparent, but for Unsplash we just use a nice image -->
+             <img src="assets/consultation.webp" alt="Beauty consultation" class="w-full h-full object-cover relative z-10" />
+             <!-- Inner dark gradient overlay to blend into the background -->
+             <div class="absolute inset-0 bg-gradient-to-t from-[#3F2B26] via-transparent to-transparent z-20"></div>
+             <div class="absolute inset-0 bg-gradient-to-r from-[#3F2B26] via-transparent to-transparent z-20"></div>
+          </div>
+        </div>
+
+        <!-- Right Content -->
+        <div class="w-full md:w-1/2 relative z-10">
+          <h2 class="font-serif text-[3.5rem] md:text-[4.5rem] text-white leading-[1.1] tracking-tight mb-1">
+            Personal beauty
+          </h2>
+          <h2 class="font-serif text-[#D0B286] text-[3.5rem] md:text-[4.5rem] leading-[1.1] tracking-tight mb-8">
+            consultation
+          </h2>
+          
+          <p class="font-serif text-white/90 text-lg md:text-[19px] leading-relaxed mb-10 max-w-lg">
+            An unhurried hour with a dedicated consultant to map your goals, skin, colouring and lifestyle into one clear plan.
+          </p>
+
+          <ul class="space-y-4 mb-12">
+            <li class="flex items-start gap-4">
+              <span class="w-1.5 h-1.5 bg-white/70 rounded-full mt-2.5 flex-shrink-0"></span>
+              <span class="font-serif text-white/80 text-[15px] leading-relaxed tracking-wide">Full skin and colour analysis with professional tools</span>
+            </li>
+            <li class="flex items-start gap-4">
+              <span class="w-1.5 h-1.5 bg-white/70 rounded-full mt-2.5 flex-shrink-0"></span>
+              <span class="font-serif text-white/80 text-[15px] leading-relaxed tracking-wide">A written beauty plan you keep after the session</span>
+            </li>
+            <li class="flex items-start gap-4">
+              <span class="w-1.5 h-1.5 bg-white/70 rounded-full mt-2.5 flex-shrink-0"></span>
+              <span class="font-serif text-white/80 text-[15px] leading-relaxed tracking-wide">Hand-picked samples to try at home</span>
+            </li>
+          </ul>
+
+          <div class="flex flex-wrap items-center gap-8">
+            <a href="404.html" class="inline-block bg-[#D0B286] text-white px-8 py-3.5 rounded font-sans text-[15px] font-medium tracking-wide hover:bg-[#B39366] transition-colors shadow-md">
+              Book a service
+            </a>
+            <div class="flex items-center gap-2 text-white/80">
+              <!-- Clock/History icon -->
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0l3.181 3.183a8.25 8.25 0 0013.803-3.7M4.031 9.865a8.25 8.25 0 0113.803-3.7l3.181 3.182m0-4.991v4.99"></path><path stroke-linecap="round" stroke-linejoin="round" d="M12 8v4l3 3"></path></svg>
+              <span class="font-serif text-[15px]">60 minutes &middot; from </span>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Bridal Makeup Section -->
+  <section class="w-full bg-[#FDF9F2] py-24 md:py-32">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="flex flex-col lg:flex-row gap-16 lg:gap-24">
+        
+        <!-- Left Column -->
+        <div class="w-full lg:w-1/2 flex flex-col">
+          <h2 class="font-serif text-[3.5rem] md:text-[4.5rem] text-[#38251E] leading-none tracking-tight mb-8">
+            Your day. Your face. Flawless for <span class="text-[#D0B286]">12 hours.</span>
+          </h2>
+          
+          <!-- Image composite container -->
+          <div class="relative w-full h-auto mt-8 flex justify-center items-center">
+            <!-- Using the exact composite cropped from the mockup -->
+            <img src="assets/creative_composite.webp" alt="Creative Composite" class="parallax-img w-[85%] md:w-[75%] max-w-[450px] h-auto object-contain mix-blend-multiply" />
+          </div>
+        </div>
+
+        <!-- Right Column -->
+        <div class="w-full lg:w-1/2 flex flex-col mt-12 lg:mt-0">
+          
+          <!-- Top Right Image -->
+          <div class="w-full h-[300px] md:h-[350px] rounded-tl-[100px] rounded-br-[100px] border-[1.5px] border-[#D0B286] overflow-hidden shadow-lg mb-12">
+            <img src="assets/red_lips.webp" alt="Applying cream" class="parallax-img w-full h-full object-cover" />
+          </div>
+
+          <h3 class="font-serif text-[3.5rem] text-[#38251E] leading-none tracking-tight mb-6">
+            Event makeup
+          </h3>
+          <p class="font-serif text-[#38251E]/90 text-[18px] leading-relaxed mb-8 max-w-md">
+            Our lead artists design a look around your outfit, your skin and the weather on the day.
+          </p>
+
+          <ul class="space-y-5 mb-10">
+            <li class="flex items-start gap-4">
+              <span class="w-1.5 h-1.5 bg-[#38251E] rounded-full mt-2.5 flex-shrink-0"></span>
+              <span class="font-serif text-[#38251E]/90 text-[16px] leading-relaxed">Trial session two weeks before the wedding</span>
+            </li>
+            <li class="flex items-start gap-4">
+              <span class="w-1.5 h-1.5 bg-[#38251E] rounded-full mt-2.5 flex-shrink-0"></span>
+              <span class="font-serif text-[#38251E]/90 text-[16px] leading-relaxed">Waterproof, humidity-proof base</span>
+            </li>
+            <li class="flex items-start gap-4">
+              <span class="w-1.5 h-1.5 bg-[#38251E] rounded-full mt-2.5 flex-shrink-0"></span>
+              <span class="font-serif text-[#38251E]/90 text-[16px] leading-relaxed">Travel to your venue within Tamil Nadu</span>
+            </li>
+            <li class="flex items-start gap-4">
+              <span class="w-1.5 h-1.5 bg-[#38251E] rounded-full mt-2.5 flex-shrink-0"></span>
+              <span class="font-serif text-[#38251E]/90 text-[16px] leading-relaxed">Touch-up kit for the day</span>
+            </li>
+          </ul>
+
+          <div>
+            <a href="404.html" class="inline-block bg-[#3F2B26] text-[#FDF9F2] px-8 py-3.5 rounded-lg font-sans text-[15px] font-medium tracking-wide hover:bg-[#2A1B15] transition-colors shadow-md">
+              Request a bridal slot
+            </a>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- The People Behind The Products Section -->
+  <section class="w-full bg-[#FDF9F2] py-24 md:py-32">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- Top Text Row -->
+      <div class="flex flex-col md:flex-row justify-between items-start md:items-end mb-20 md:mb-32">
+        <h2 class="font-serif text-[3.5rem] md:text-[4.5rem] text-[#38251E] leading-none tracking-tight mb-6 md:mb-0 max-w-2xl">
+          The people behind the <span class="text-[#D0B286]">products</span>
+        </h2>
+        <p class="font-serif text-[#38251E] text-lg md:text-[1.15rem] font-medium max-w-xs md:text-left pb-2">
+          A small team of formulators, makeup artists and skin nerds.
+        </p>
+      </div>
+
+      <!-- Team Grid -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12 md:gap-6">
+        
+        <!-- Member 1 -->
+        <div class="team-card luxury-neon-border flex flex-col items-center cursor-pointer">
+          <div class="w-full max-w-[260px] md:max-w-full aspect-[2/3] rounded-[200px] border-[1.5px] border-[#D0B286] overflow-hidden shadow-md mb-8">
+            <img src="assets/opt_2e2daebb.webp" alt="Kavya Raman" class="w-full h-full object-cover transition-transform" style="filter: grayscale(100%);" />
+          </div>
+          <div class="info text-center relative"><h3 class="font-serif text-[#38251E] text-3xl mb-2 text-center">Kavya Raman</h3><p class="font-serif text-[#38251E]/80 text-[15px] text-center">Founder and CEO</p>
+  <div class="flex justify-center space-x-4 mt-4">
+    <a href="404.html" class="w-8 h-8 rounded-full border border-[#38251E]/20 flex items-center justify-center text-[#38251E]/70 hover:bg-[#38251E] hover:text-[#FDF9F2] transition-colors"><i class="fa-brands fa-linkedin-in text-sm"></i></a>
+    <a href="404.html" class="w-8 h-8 rounded-full border border-[#38251E]/20 flex items-center justify-center text-[#38251E]/70 hover:bg-[#38251E] hover:text-[#FDF9F2] transition-colors"><i class="fa-brands fa-instagram text-sm"></i></a>
+    <a href="404.html" class="w-8 h-8 rounded-full border border-[#38251E]/20 flex items-center justify-center text-[#38251E]/70 hover:bg-[#38251E] hover:text-[#FDF9F2] transition-colors"><i class="fa-brands fa-x-twitter text-sm"></i></a>
+  </div>
+</div>
+        </div>
+
+        <!-- Member 2 (Pushed down on desktop) -->
+        <div class="team-card luxury-neon-border flex flex-col items-center lg:mt-24 cursor-pointer">
+          <div class="w-full max-w-[260px] md:max-w-full aspect-[2/3] rounded-[200px] border-[1.5px] border-[#D0B286] overflow-hidden shadow-md mb-8">
+            <img src="assets/opt_2c92114b.webp" alt="Dr. Nisha Iyer" class="w-full h-full object-cover transition-transform" style="filter: grayscale(100%);" />
+          </div>
+          <div class="info text-center relative"><h3 class="font-serif text-[#38251E] text-3xl mb-2 text-center">Dr. Nisha Iyer</h3><p class="font-serif text-[#38251E]/80 text-[15px] text-center">Head of formulation</p>
+  <div class="flex justify-center space-x-4 mt-4">
+    <a href="404.html" class="w-8 h-8 rounded-full border border-[#38251E]/20 flex items-center justify-center text-[#38251E]/70 hover:bg-[#38251E] hover:text-[#FDF9F2] transition-colors"><i class="fa-brands fa-linkedin-in text-sm"></i></a>
+    <a href="404.html" class="w-8 h-8 rounded-full border border-[#38251E]/20 flex items-center justify-center text-[#38251E]/70 hover:bg-[#38251E] hover:text-[#FDF9F2] transition-colors"><i class="fa-brands fa-instagram text-sm"></i></a>
+    <a href="404.html" class="w-8 h-8 rounded-full border border-[#38251E]/20 flex items-center justify-center text-[#38251E]/70 hover:bg-[#38251E] hover:text-[#FDF9F2] transition-colors"><i class="fa-brands fa-x-twitter text-sm"></i></a>
+  </div>
+</div>
+        </div>
+
+        <!-- Member 3 -->
+        <div class="team-card luxury-neon-border flex flex-col items-center cursor-pointer">
+          <div class="w-full max-w-[260px] md:max-w-full aspect-[2/3] rounded-[200px] border-[1.5px] border-[#D0B286] overflow-hidden shadow-md mb-8">
+            <img src="assets/opt_b3d150b6.webp" alt="Arjun Menon" class="w-full h-full object-cover transition-transform" style="filter: grayscale(100%);" />
+          </div>
+          <div class="info text-center relative"><h3 class="font-serif text-[#38251E] text-3xl mb-2 text-center">Arjun Menon</h3><p class="font-serif text-[#38251E]/80 text-[15px] text-center">Colour and shade lead</p>
+  <div class="flex justify-center space-x-4 mt-4">
+    <a href="404.html" class="w-8 h-8 rounded-full border border-[#38251E]/20 flex items-center justify-center text-[#38251E]/70 hover:bg-[#38251E] hover:text-[#FDF9F2] transition-colors"><i class="fa-brands fa-linkedin-in text-sm"></i></a>
+    <a href="404.html" class="w-8 h-8 rounded-full border border-[#38251E]/20 flex items-center justify-center text-[#38251E]/70 hover:bg-[#38251E] hover:text-[#FDF9F2] transition-colors"><i class="fa-brands fa-instagram text-sm"></i></a>
+    <a href="404.html" class="w-8 h-8 rounded-full border border-[#38251E]/20 flex items-center justify-center text-[#38251E]/70 hover:bg-[#38251E] hover:text-[#FDF9F2] transition-colors"><i class="fa-brands fa-x-twitter text-sm"></i></a>
+  </div>
+</div>
+        </div>
+
+        <!-- Member 4 (Pushed down on desktop) -->
+        <div class="team-card luxury-neon-border flex flex-col items-center lg:mt-24 cursor-pointer">
+          <div class="w-full max-w-[260px] md:max-w-full aspect-[2/3] rounded-[200px] border-[1.5px] border-[#D0B286] overflow-hidden shadow-md mb-8">
+            <img src="assets/opt_23356de8.webp" alt="Sana Fathima" class="w-full h-full object-cover transition-transform" style="filter: grayscale(100%);" />
+          </div>
+          <div class="info text-center relative"><h3 class="font-serif text-[#38251E] text-3xl mb-2 text-center">Sana Fathima</h3><p class="font-serif text-[#38251E]/80 text-[15px] text-center">Customer care manager</p>
+  <div class="flex justify-center space-x-4 mt-4">
+    <a href="404.html" class="w-8 h-8 rounded-full border border-[#38251E]/20 flex items-center justify-center text-[#38251E]/70 hover:bg-[#38251E] hover:text-[#FDF9F2] transition-colors"><i class="fa-brands fa-linkedin-in text-sm"></i></a>
+    <a href="404.html" class="w-8 h-8 rounded-full border border-[#38251E]/20 flex items-center justify-center text-[#38251E]/70 hover:bg-[#38251E] hover:text-[#FDF9F2] transition-colors"><i class="fa-brands fa-instagram text-sm"></i></a>
+    <a href="404.html" class="w-8 h-8 rounded-full border border-[#38251E]/20 flex items-center justify-center text-[#38251E]/70 hover:bg-[#38251E] hover:text-[#FDF9F2] transition-colors"><i class="fa-brands fa-x-twitter text-sm"></i></a>
+  </div>
+</div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Your Beauty Journey Section -->
+  <section class="w-full bg-[#FDF9F2] py-24 md:py-32 relative overflow-hidden">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16 md:mb-24">
+        <h2 class="font-serif text-[2.5rem] md:text-[3.25rem] text-[#38251E] leading-tight tracking-tight mb-4">
+          Your Beauty <span class="text-[#D0B286] font-light italic">Journey</span>
+        </h2>
+        <p class="font-serif text-[#38251E]/80 text-[1.15rem] max-w-2xl mx-auto">
+          A seamless five-step experience tailored entirely to you and your skin.
+        </p>
+      </div>
+
+      <div class="relative w-full max-w-5xl mx-auto journey-timeline-container">
+        <!-- Vertical Timeline Line -->
+        <div class="absolute left-[43px] md:left-1/2 top-0 bottom-0 w-[2px] bg-[#E9D1A7] transform md:-translate-x-1/2 z-0 hidden md:block">
+          <div class="w-full bg-[#C59A65] origin-top journey-line-progress h-full scale-y-0"></div>
+        </div>
+        
+        <!-- Mobile Vertical Timeline Line -->
+        <div class="absolute left-[43px] top-0 bottom-0 w-[2px] bg-[#E9D1A7] z-0 md:hidden">
+          <div class="w-full bg-[#C59A65] origin-top journey-line-progress h-full scale-y-0"></div>
+        </div>
+
+        <div class="space-y-12 md:space-y-24">
+          <!-- Step 1 -->
+          <div class="relative z-10 flex flex-col md:flex-row items-start md:items-center w-full journey-step opacity-0 translate-y-10">
+            <div class="md:w-1/2 md:pr-16 md:text-right pl-[5rem] md:pl-0 w-full mb-2 md:mb-0">
+              <h3 class="font-serif text-[1.75rem] text-[#38251E] mb-2">01. Discover</h3>
+              <p class="font-serif text-[#38251E]/80 text-[1rem]">Explore our range of premium products and services designed for every skin type.</p>
+            </div>
+            <div class="absolute left-4 md:left-1/2 top-0 md:top-1/2 transform md:-translate-y-1/2 md:-translate-x-1/2 w-[3.5rem] h-[3.5rem] rounded-full bg-[#38251E] border-[4px] border-[#FDF9F2] flex items-center justify-center text-[#C59A65] z-20 shadow-md transition-transform duration-500 hover:scale-110">
+              <i class="fa-solid fa-magnifying-glass"></i>
+            </div>
+            <div class="md:w-1/2 md:pl-16 hidden md:block"></div>
+          </div>
+
+          <!-- Step 2 -->
+          <div class="relative z-10 flex flex-col md:flex-row items-start md:items-center w-full journey-step opacity-0 translate-y-10">
+            <div class="md:w-1/2 md:pr-16 hidden md:block"></div>
+            <div class="absolute left-4 md:left-1/2 top-0 md:top-1/2 transform md:-translate-y-1/2 md:-translate-x-1/2 w-[3.5rem] h-[3.5rem] rounded-full bg-[#D0B286] border-[4px] border-[#FDF9F2] flex items-center justify-center text-[#38251E] z-20 shadow-md transition-transform duration-500 hover:scale-110">
+              <i class="fa-regular fa-comments"></i>
+            </div>
+            <div class="md:w-1/2 md:pl-16 pl-[5rem] md:text-left w-full mt-2 md:mt-0">
+              <h3 class="font-serif text-[1.75rem] text-[#38251E] mb-2">02. Consult</h3>
+              <p class="font-serif text-[#38251E]/80 text-[1rem]">Speak with our beauty experts to understand your unique needs and goals.</p>
+            </div>
+          </div>
+
+          <!-- Step 3 -->
+          <div class="relative z-10 flex flex-col md:flex-row items-start md:items-center w-full journey-step opacity-0 translate-y-10">
+            <div class="md:w-1/2 md:pr-16 md:text-right pl-[5rem] md:pl-0 w-full mb-2 md:mb-0">
+              <h3 class="font-serif text-[1.75rem] text-[#38251E] mb-2">03. Personalize</h3>
+              <p class="font-serif text-[#38251E]/80 text-[1rem]">Receive a curated routine or treatment plan specifically matched to you.</p>
+            </div>
+            <div class="absolute left-4 md:left-1/2 top-0 md:top-1/2 transform md:-translate-y-1/2 md:-translate-x-1/2 w-[3.5rem] h-[3.5rem] rounded-full bg-[#38251E] border-[4px] border-[#FDF9F2] flex items-center justify-center text-[#C59A65] z-20 shadow-md transition-transform duration-500 hover:scale-110">
+              <i class="fa-solid fa-wand-magic-sparkles"></i>
+            </div>
+            <div class="md:w-1/2 md:pl-16 hidden md:block"></div>
+          </div>
+
+          <!-- Step 4 -->
+          <div class="relative z-10 flex flex-col md:flex-row items-start md:items-center w-full journey-step opacity-0 translate-y-10">
+            <div class="md:w-1/2 md:pr-16 hidden md:block"></div>
+            <div class="absolute left-4 md:left-1/2 top-0 md:top-1/2 transform md:-translate-y-1/2 md:-translate-x-1/2 w-[3.5rem] h-[3.5rem] rounded-full bg-[#D0B286] border-[4px] border-[#FDF9F2] flex items-center justify-center text-[#38251E] z-20 shadow-md transition-transform duration-500 hover:scale-110">
+              <i class="fa-solid fa-spa"></i>
+            </div>
+            <div class="md:w-1/2 md:pl-16 pl-[5rem] md:text-left w-full mt-2 md:mt-0">
+              <h3 class="font-serif text-[1.75rem] text-[#38251E] mb-2">04. Experience</h3>
+              <p class="font-serif text-[#38251E]/80 text-[1rem]">Indulge in our luxurious treatments and premium formulations.</p>
+            </div>
+          </div>
+
+          <!-- Step 5 -->
+          <div class="relative z-10 flex flex-col md:flex-row items-start md:items-center w-full journey-step opacity-0 translate-y-10">
+            <div class="md:w-1/2 md:pr-16 md:text-right pl-[5rem] md:pl-0 w-full mb-2 md:mb-0">
+              <h3 class="font-serif text-[1.75rem] text-[#38251E] mb-2">05. Glow</h3>
+              <p class="font-serif text-[#38251E]/80 text-[1rem]">Step out with renewed confidence and an unmistakable radiant glow.</p>
+            </div>
+            <div class="absolute left-4 md:left-1/2 top-0 md:top-1/2 transform md:-translate-y-1/2 md:-translate-x-1/2 w-[3.5rem] h-[3.5rem] rounded-full bg-[#38251E] border-[4px] border-[#FDF9F2] flex items-center justify-center text-[#C59A65] z-20 shadow-md transition-transform duration-500 hover:scale-110">
+              <i class="fa-regular fa-face-smile-beam"></i>
+            </div>
+            <div class="md:w-1/2 md:pl-16 hidden md:block"></div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Beauty Transformations Section -->
+  <section class="w-full bg-[#38251E] py-24 md:py-32 relative overflow-hidden border-t border-[#FDF9F2]/10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div class="text-center mb-16 md:mb-24">
+        <h2 class="font-serif text-[2.5rem] md:text-[3.25rem] text-[#FDF9F2] leading-tight tracking-tight mb-4">
+          Beauty <span class="text-[#D0B286] font-light italic">Transformations</span>
+        </h2>
+        <p class="font-serif text-[#FDF9F2]/80 text-[1.15rem] max-w-2xl mx-auto">
+          See the dramatic yet natural difference our services and products make.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-10 lg:gap-16">
+        
+        <!-- Transformation 1 -->
+        <div class="transform-card luxury-neon-border group relative bg-[#FDF9F2]/5 rounded-3xl p-4 md:p-6 border border-[#FDF9F2]/10 transition-all duration-500 hover:border-[#D0B286]/50 hover:-translate-y-2 opacity-0 translate-y-10">
+          <div class="relative w-full aspect-[4/3] rounded-2xl overflow-hidden mb-6 group">
+            <img src="assets/opt_18f4eb42.webp" alt="Skin Consultation Before After" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
+            <div class="absolute bottom-4 left-4 flex gap-2 z-10">
+              <span class="bg-[#38251E]/80 backdrop-blur-md text-[#FDF9F2] text-xs font-serif px-3 py-1 rounded-full border border-[#FDF9F2]/20">Before & After</span>
+            </div>
+          </div>
+          <h3 class="font-serif text-2xl text-[#FDF9F2] mb-2">Skin Consultation</h3>
+          <p class="font-serif text-[#FDF9F2]/70 text-[1rem]">A tailored routine restoring hydration and natural balance to stressed skin.</p>
+        </div>
+
+        <!-- Transformation 2 -->
+        <div class="transform-card luxury-neon-border group relative bg-[#FDF9F2]/5 rounded-3xl p-4 md:p-6 border border-[#FDF9F2]/10 transition-all duration-500 hover:border-[#D0B286]/50 hover:-translate-y-2 opacity-0 translate-y-10 delay-100">
+          <div class="relative w-full aspect-[4/3] rounded-2xl overflow-hidden mb-6 group">
+            <img src="assets/opt_b882686d.webp" alt="Makeup Look Before After" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
+            <div class="absolute bottom-4 left-4 flex gap-2 z-10">
+              <span class="bg-[#38251E]/80 backdrop-blur-md text-[#FDF9F2] text-xs font-serif px-3 py-1 rounded-full border border-[#FDF9F2]/20">Before & After</span>
+            </div>
+          </div>
+          <h3 class="font-serif text-2xl text-[#FDF9F2] mb-2">Signature Makeup Look</h3>
+          <p class="font-serif text-[#FDF9F2]/70 text-[1rem]">Elevating natural features with our breathable, luminous formulations.</p>
+        </div>
+
+        <!-- Transformation 3 -->
+        <div class="transform-card luxury-neon-border group relative bg-[#FDF9F2]/5 rounded-3xl p-4 md:p-6 border border-[#FDF9F2]/10 transition-all duration-500 hover:border-[#D0B286]/50 hover:-translate-y-2 opacity-0 translate-y-10">
+          <div class="relative w-full aspect-[4/3] rounded-2xl overflow-hidden mb-6 group">
+            <img src="assets/bridal_composite.webp" alt="Bridal Look Before After" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
+            <div class="absolute bottom-4 left-4 flex gap-2 z-10">
+              <span class="bg-[#38251E]/80 backdrop-blur-md text-[#FDF9F2] text-xs font-serif px-3 py-1 rounded-full border border-[#FDF9F2]/20">Before & After</span>
+            </div>
+          </div>
+          <h3 class="font-serif text-2xl text-[#FDF9F2] mb-2">Bridal Radiance</h3>
+          <p class="font-serif text-[#FDF9F2]/70 text-[1rem]">Long-wear, flawless finish designed to look stunning in person and on camera.</p>
+        </div>
+
+        <!-- Transformation 4 -->
+        <div class="transform-card luxury-neon-border group relative bg-[#FDF9F2]/5 rounded-3xl p-4 md:p-6 border border-[#FDF9F2]/10 transition-all duration-500 hover:border-[#D0B286]/50 hover:-translate-y-2 opacity-0 translate-y-10 delay-100">
+          <div class="relative w-full aspect-[4/3] rounded-2xl overflow-hidden mb-6 group">
+            <img src="assets/opt_f1f1fde0.webp" alt="Shade Matching Before After" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
+            <div class="absolute bottom-4 left-4 flex gap-2 z-10">
+              <span class="bg-[#38251E]/80 backdrop-blur-md text-[#FDF9F2] text-xs font-serif px-3 py-1 rounded-full border border-[#FDF9F2]/20">Before & After</span>
+            </div>
+          </div>
+          <h3 class="font-serif text-2xl text-[#FDF9F2] mb-2">Perfect Shade Matching</h3>
+          <p class="font-serif text-[#FDF9F2]/70 text-[1rem]">Seamless blending that matches your exact undertone and complexion.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+  <!-- CTA Section -->
+  <section class="w-full relative py-32 md:py-40 flex items-center justify-center overflow-hidden">
+    <!-- Gradient Background -->
+    <div class="absolute inset-0 bg-gradient-to-br from-[#3F2B26] via-[#614133] to-[#3F2B26] z-0"></div>
+    <!-- Soft warm glow -->
+    <div class="absolute inset-0 flex justify-center items-center z-0 opacity-40">
+      <div class="w-[600px] h-[300px] bg-[#D0B286] rounded-full blur-[120px]"></div>
+    </div>
+    
+    <div class="relative z-10 max-w-3xl mx-auto px-4 text-center flex flex-col items-center">
+      <h2 class="font-serif text-[3rem] md:text-[4rem] text-white leading-tight mb-6">
+        Come say hello
+      </h2>
+      <p class="font-serif text-white/90 text-[17px] md:text-[19px] leading-relaxed mb-12 max-w-xl">
+        Visit our studio in Madurai for a free shade match, or ask our team anything online.
+      </p>
+      
+      <div class="flex flex-col sm:flex-row items-center gap-6 sm:gap-8">
+        <a href="404.html" class="inline-block bg-[#D0B286] text-white px-8 py-3.5 rounded-lg font-sans text-[15px] font-medium tracking-wide hover:bg-[#B39366] transition-colors shadow-lg">
+          Book a service
+        </a>
+        <a href="404.html" class="font-serif text-white text-[16px] tracking-wide underline underline-offset-8 decoration-white/40 hover:decoration-white transition-all">
+          Book a shade match
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="w-full bg-[#C3A47C] pt-20 pb-16 mt-10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-10 lg:gap-8">
+        
+        <!-- Column 1: Brand & Socials -->
+          <div class="flex flex-col lg:col-span-4 lg:pr-12">
+          <!-- Logo -->
+          <div class="flex-shrink-0 flex items-center mb-6">
+            <img src="assets/logo_0027.webp" alt="Stackly Logo" class="h-12 w-auto object-contain" />
+          </div>
+          <p class="font-serif text-white mb-8 leading-snug">
+            Modern luxury beauty, made with botanicals and a little gold.
+          </p>
+          <!-- Social Icons -->
+          <div class="flex space-x-3">
+            <!-- Google -->
+            <a href="404.html" class="w-10 h-10 rounded-xl bg-[#FDF9F2] flex items-center justify-center hover:bg-white transition-colors shadow-sm text-black hover:text-[#38251E]">
+              <i class="fa-brands fa-google text-base"></i>
+            </a>
+            <!-- Facebook -->
+            <a href="404.html" class="w-10 h-10 rounded-xl bg-[#FDF9F2] flex items-center justify-center hover:bg-white transition-colors shadow-sm text-black hover:text-[#38251E]">
+              <i class="fa-brands fa-facebook-f text-base"></i>
+            </a>
+            <!-- Instagram -->
+            <a href="404.html" class="w-10 h-10 rounded-xl bg-[#FDF9F2] flex items-center justify-center hover:bg-white transition-colors shadow-sm text-black hover:text-[#38251E]">
+              <i class="fa-brands fa-instagram text-base"></i>
+            </a>
+            <!-- X (Twitter) -->
+            <a href="404.html" class="w-10 h-10 rounded-xl bg-[#FDF9F2] flex items-center justify-center hover:bg-white transition-colors shadow-sm text-black hover:text-[#38251E]">
+              <i class="fa-brands fa-x-twitter text-base"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Column 2: Links -->
+          <div class="flex flex-col lg:col-span-2">
+          <h3 class="font-serif text-[1.4rem] text-black mb-6">Links</h3>
+          <ul class="space-y-3.5 font-serif text-[14px] text-white/90">
+            <li><a href="index.html" class="hover:text-white transition-colors">Home</a></li>
+           <li><a href="about.html" class="hover:text-white transition-colors">About</a></li>
+           <li><a href="services.html" class="hover:text-white transition-colors">Services</a></li>
+            <li><a href="blog.html" class="hover:text-white transition-colors">Blog</a></li>
+            <li><a href="contact.html" class="hover:text-white transition-colors">Contact</a></li>
+          </ul>
+        </div>
+
+        <!-- Column 3: Help -->
+          <div class="flex flex-col lg:col-span-2">
+          <h3 class="font-serif text-[1.4rem] text-black mb-6">Help</h3>
+          <ul class="space-y-3.5 font-serif text-[14px] text-white/90">
+            <li><a href="404.html" class="hover:text-white transition-colors">Shipping</a></li>
+            <li><a href="404.html" class="hover:text-white transition-colors">Returns</a></li>
+            <li><a href="404.html" class="hover:text-white transition-colors">Skin consultation</a></li>
+            <li><a href="404.html" class="hover:text-white transition-colors">Gift cards</a></li>
+          </ul>
+        </div>
+
+                <!-- Column 4: Legal -->
+          <div class="flex flex-col lg:col-span-2">
+          <h3 class="font-serif text-[1.4rem] text-black mb-6">Legal</h3>
+          <ul class="space-y-3.5 font-serif text-[14px] text-white/90">
+            <li><a href="404.html" class="hover:text-white transition-colors">Privacy Policy</a></li>
+            <li><a href="404.html" class="hover:text-white transition-colors">Terms of Service</a></li>
+            <li><a href="404.html" class="hover:text-white transition-colors">Cookie Policy</a></li>
+            <li><a href="404.html" class="hover:text-white transition-colors">Accessibility</a></li>
+          </ul>
+        </div>
+
+        <!-- Column 5: Contact Us -->
+          <div class="flex flex-col lg:col-span-2">
+            <h3 class="font-serif text-[1.4rem] text-black mb-6">Contact us</h3>
+            <div class="space-y-4 font-serif text-[14px] text-white/90 leading-relaxed">
+              <p class="flex items-start gap-3">
+                <i class="fa-solid fa-location-dot mt-1 text-white/80"></i>
+                <span>MMR Complex,<br/>periyakollapatty,<br/>Chinnatirupathi<br/>Salem<br/>Tamil nadu -636008</span>
+              </p>
+              <p class="flex items-center gap-3">
+                <i class="fa-solid fa-envelope text-white/80"></i>
+                <a href="mailto:info@stackly.com" class="hover:text-white transition-colors">info@stackly.com</a>
+              </p>
+              <p class="flex items-center gap-3">
+                <i class="fa-solid fa-phone text-white/80"></i>
+                <a href="tel:+919876543210" class="hover:text-white transition-colors">+91 98765 43210</a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="mt-12 pt-6 pb-2 text-center text-[15px] text-[#FDF9F2]/80 font-sans border-t border-[#38251E]/10">
+        &copy; 2026 Stackly Beauty. All rights reserved.
+    </div>
+  </footer>
+
+
+  <!-- GSAP & ScrollTrigger -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+  <script src='main.js'></script>
+    <script src="premium-animations.js"></script>
+    <script src="custom-additions.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
