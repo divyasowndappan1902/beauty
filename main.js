@@ -156,3 +156,132 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 
+
+// New Custom Sections Animations & Interactions
+document.addEventListener("DOMContentLoaded", () => {
+    
+    // 1. Reveal Animations (Intersection Observer for opacity-0 elements)
+    const observerOptions = {
+        root: null,
+        rootMargin: '0px',
+        threshold: 0.15
+    };
+
+    const revealObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const el = entry.target;
+                
+                // General fade up classes
+                if (el.classList.contains('opacity-0')) {
+                    el.classList.remove('opacity-0', 'translate-y-10', 'scale-95');
+                    el.classList.add('opacity-100', 'translate-y-0', 'scale-100');
+                }
+                
+                // Specific line progress (Formulation & Journey timelines)
+                if (el.classList.contains('formulation-steps-container') || el.classList.contains('journey-timeline-container')) {
+                    const lines = el.querySelectorAll('.formulation-line-progress, .journey-line-progress');
+                    lines.forEach(line => {
+                        line.classList.remove('scale-y-0');
+                        line.classList.add('scale-y-100');
+                    });
+                }
+                
+                // Specific Counter Animation (Beauty by Numbers)
+                if (el.classList.contains('stat-card')) {
+                    const counter = el.querySelector('.counter');
+                    const counterFloat = el.querySelector('.counter-float');
+                    
+                    if (counter && !counter.classList.contains('counted')) {
+                        counter.classList.add('counted');
+                        const target = +counter.getAttribute('data-target');
+                        const duration = 2000;
+                        const frameRate = 30;
+                        const totalFrames = Math.round((duration / 1000) * frameRate);
+                        let frame = 0;
+                        
+                        const updateCounter = () => {
+                            frame++;
+                            const progress = frame / totalFrames;
+                            const current = target * (1 - (1 - progress) * (1 - progress));
+                            
+                            if (frame < totalFrames) {
+                                counter.innerText = Math.ceil(current).toLocaleString();
+                                requestAnimationFrame(updateCounter);
+                            } else {
+                                counter.innerText = target.toLocaleString();
+                            }
+                        };
+                        requestAnimationFrame(updateCounter);
+                    }
+
+                    if (counterFloat && !counterFloat.classList.contains('counted')) {
+                        counterFloat.classList.add('counted');
+                        const target = +counterFloat.getAttribute('data-target');
+                        const duration = 2000;
+                        const frameRate = 30;
+                        const totalFrames = Math.round((duration / 1000) * frameRate);
+                        let frame = 0;
+                        
+                        const updateCounter = () => {
+                            frame++;
+                            const progress = frame / totalFrames;
+                            const current = target * (1 - (1 - progress) * (1 - progress));
+                            
+                            if (frame < totalFrames) {
+                                counterFloat.innerText = current.toFixed(1);
+                                requestAnimationFrame(updateCounter);
+                            } else {
+                                counterFloat.innerText = target.toFixed(1);
+                            }
+                        };
+                        requestAnimationFrame(updateCounter);
+                    }
+                }
+                
+                observer.unobserve(el);
+            }
+        });
+    }, observerOptions);
+
+    // Observe elements
+    const elementsToReveal = document.querySelectorAll('.formulation-step, .formulation-steps-container, .stat-card, .journey-step, .journey-timeline-container, .transform-card, .guide-card');
+    elementsToReveal.forEach(el => revealObserver.observe(el));
+
+    // 2. Accordion Interaction (Ask Our Beauty Experts)
+    const faqBtns = document.querySelectorAll('.faq-btn');
+    faqBtns.forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            e.preventDefault();
+            const currentItem = btn.closest('.faq-item');
+            const currentContent = currentItem.querySelector('.faq-content');
+            const currentIcon = btn.querySelector('.faq-icon i');
+            const isOpen = currentContent.style.maxHeight !== '0px' && currentContent.style.maxHeight !== '';
+
+            // Close all
+            document.querySelectorAll('.faq-content').forEach(content => {
+                content.style.maxHeight = '0px';
+                const parent = content.closest('.faq-item');
+                if(parent) {
+                    parent.classList.remove('border-[#C59A65]');
+                    parent.classList.add('border-[#38251E]/10');
+                }
+            });
+            document.querySelectorAll('.faq-icon i').forEach(icon => {
+                icon.className = 'fa-solid fa-plus';
+                icon.parentElement.classList.remove('bg-[#38251E]', 'text-[#FDF9F2]');
+                icon.parentElement.classList.add('text-[#38251E]');
+            });
+
+            // Open clicked if it was closed
+            if (!isOpen) {
+                currentContent.style.maxHeight = currentContent.scrollHeight + 'px';
+                currentItem.classList.remove('border-[#38251E]/10');
+                currentItem.classList.add('border-[#C59A65]');
+                currentIcon.className = 'fa-solid fa-minus';
+                currentIcon.parentElement.classList.remove('text-[#38251E]');
+                currentIcon.parentElement.classList.add('bg-[#38251E]', 'text-[#FDF9F2]');
+            }
+        });
+    });
+});
