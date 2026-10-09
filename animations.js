@@ -106,6 +106,20 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // --- PAGE SPECIFIC ANIMATIONS ---
 
+    const startFloating = (el, delay = 0) => {
+        if (!el) return;
+        el.classList.remove('animate-float', 'animate-float-reverse', 'animate-float-slow');
+        gsap.to(el, {
+            y: -15,
+            duration: 3,
+            yoyo: true,
+            repeat: -1,
+            ease: 'sine.inOut',
+            delay: delay
+        });
+    };
+
+
     if (isPage('index')) {
         // Hero
         const heroSection = document.querySelector('main');
@@ -131,8 +145,7 @@ document.addEventListener("DOMContentLoaded", () => {
             if (heroImg) {
                 gsap.fromTo(heroImg, 
                     { clipPath: 'inset(20% 20% 20% 20%)', scale: 1.1 }, 
-                    { clipPath: 'inset(0% 0% 0% 0%)', scale: 1, duration: 1.5, delay: 0.4, ease: 'power2.out'
-                    }
+                    { clipPath: 'inset(0% 0% 0% 0%)', scale: 1, duration: 1.5, delay: 0.4, ease: 'power2.out', onComplete: () => startFloating(heroImg) }
                 );
             }
             
@@ -141,17 +154,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 gsap.fromTo(glassCards, 
                     { opacity: 0, y: 20 }, 
                     { opacity: 1, y: 0, duration: 1, delay: 0.8, stagger: 0.2, ease: 'power2.out',
-                      onComplete: () => {
-                          glassCards.forEach((card, i) => {
-                              gsap.to(card, {
-                                  y: -12,
-                                  duration: 2.2 + (i * 0.4),
-                                  yoyo: true,
-                                  repeat: -1,
-                                  ease: 'sine.inOut'
-                              });
-                          });
-                      }
+                      
                     }
                 );
             }
@@ -228,8 +231,7 @@ document.addEventListener("DOMContentLoaded", () => {
             const heroImg = heroSection.querySelectorAll('img:not([alt*="Logo"]):not(.h-10):not(.h-12)');
             gsap.fromTo(heroText, { x: -30, opacity: 0 }, { x: 0, opacity: 1, stagger: 0.2, duration: 1, delay: 0.2 });
             if (heroImg.length > 0) {
-                gsap.fromTo(heroImg, { x: 30, opacity: 0 }, { x: 0, opacity: 1, stagger: 0.2, duration: 1, delay: 0.4
-                });
+                gsap.fromTo(heroImg, { x: 30, opacity: 0 }, { x: 0, opacity: 1, stagger: 0.2, duration: 1, delay: 0.4, onComplete: () => heroImg.forEach(img => startFloating(img)) });
             }
         }
 
@@ -307,8 +309,7 @@ document.addEventListener("DOMContentLoaded", () => {
             gsap.fromTo(heroSection.querySelectorAll('h1, p'), { y: 30, opacity: 0 }, { y: 0, opacity: 1, stagger: 0.2, duration: 1, delay: 0.2 });
             const heroImg = heroSection.querySelectorAll('img:not([alt*="Logo"]):not(.h-10):not(.h-12)');
             if (heroImg.length > 0) {
-                gsap.fromTo(heroImg, { opacity: 0, scale: 0.95 }, { opacity: 1, scale: 1, duration: 1, delay: 0.4
-                });
+                gsap.fromTo(heroImg, { opacity: 0, scale: 0.95 }, { opacity: 1, scale: 1, duration: 1, delay: 0.4, onComplete: () => heroImg.forEach(img => startFloating(img)) });
             }
         }
 
@@ -411,8 +412,7 @@ document.addEventListener("DOMContentLoaded", () => {
             gsap.fromTo(heroSection.querySelectorAll('h1, p'), { y: 30, opacity: 0 }, { y: 0, opacity: 1, stagger: 0.2, duration: 1, delay: 0.2 });
             const heroImg = heroSection.querySelectorAll('img:not([alt*="Logo"]):not(.h-10):not(.h-12)');
             if (heroImg.length > 0) {
-                gsap.fromTo(heroImg, { opacity: 0, scale: 0.95 }, { opacity: 1, scale: 1, duration: 1, delay: 0.4
-                });
+                gsap.fromTo(heroImg, { opacity: 0, scale: 0.95 }, { opacity: 1, scale: 1, duration: 1, delay: 0.4, onComplete: () => heroImg.forEach(img => startFloating(img)) });
             }
         }
 
@@ -451,8 +451,7 @@ document.addEventListener("DOMContentLoaded", () => {
             gsap.fromTo(heroSection.querySelectorAll('h1, p'), { y: 30, opacity: 0 }, { y: 0, opacity: 1, stagger: 0.2, duration: 1, delay: 0.2 });
             const heroImg = heroSection.querySelectorAll('img:not([alt*="Logo"]):not(.h-10):not(.h-12)');
             if (heroImg.length > 0) {
-                gsap.fromTo(heroImg, { opacity: 0, scale: 0.95 }, { opacity: 1, scale: 1, duration: 1, delay: 0.4
-                });
+                gsap.fromTo(heroImg, { opacity: 0, scale: 0.95 }, { opacity: 1, scale: 1, duration: 1, delay: 0.4, onComplete: () => heroImg.forEach(img => startFloating(img)) });
             }
         }
 
