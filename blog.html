@@ -13,11 +13,11 @@
     <!-- Font Awesome & Google Material Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons|Material+Symbols+Outlined" />
-</head>
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"></head>
 <body class="bg-[#FDF9F2] text-[#38251E] font-sans antialiased overflow-x-clip pt-[72px] md:pt-[80px]">
 
   <!-- Luxury Stackly Preloader -->
-  <div id="preloader" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: 9999999; background-color: #FDF9F2; display: flex; flex-direction: column; align-items: center; justify-content: center; user-select: none;">
+  <div id="preloader" style="position: fixed; top: 0; left: 0; right: 0; bottom: 0; width: 100vw; height: 100vh; height: 100dvh; z-index: 9999999; background-color: #FDF9F2; display: flex; flex-direction: column; align-items: center; justify-content: center; user-select: none;">
     <style>
       @keyframes stFloat {
         0%, 100% { transform: translateY(0); }
@@ -228,21 +228,12 @@
             Stories on skin, colour and ritual. Written by chemists, makeup artists and editors who care about what is inside the bottle.
           </p>
 
-          <!-- Category Tags -->
-          <div class="flex flex-wrap gap-x-3 gap-y-4 max-w-md">
-            <a href="404.html" class="px-6 py-2.5 rounded-[12px] bg-[#38251E] text-white text-[12px] font-sans font-medium tracking-wide uppercase hover:bg-[#2A1B15] transition-colors">All</a>
-            <a href="404.html" class="px-6 py-2.5 rounded-[12px] bg-white border border-[#38251E]/10 text-[#38251E] text-[12px] font-sans font-medium tracking-wide uppercase hover:bg-[#38251E]/5 transition-colors shadow-sm">Skincare</a>
-            <a href="404.html" class="px-6 py-2.5 rounded-[12px] bg-white border border-[#38251E]/10 text-[#38251E] text-[12px] font-sans font-medium tracking-wide uppercase hover:bg-[#38251E]/5 transition-colors shadow-sm">Makeup</a>
-            <div class="w-full h-0"></div> <!-- Break line to match exact mockup wrapping -->
-            <a href="404.html" class="px-6 py-2.5 rounded-[12px] bg-white border border-[#38251E]/10 text-[#38251E] text-[12px] font-sans font-medium tracking-wide uppercase hover:bg-[#38251E]/5 transition-colors shadow-sm mt-1">Ingredients</a>
-            <a href="404.html" class="px-6 py-2.5 rounded-[12px] bg-white border border-[#38251E]/10 text-[#38251E] text-[12px] font-sans font-medium tracking-wide uppercase hover:bg-[#38251E]/5 transition-colors shadow-sm mt-1">Rituals</a>
           </div>
-        </div>
 
         <!-- Right Content (Image) -->
         <!-- Negative margins allow image to slightly overlap the "y" like in mockup -->
         <div class="right-content w-full md:w-5/12 relative mt-16 md:mt-0 flex justify-end md:-ml-8 lg:-ml-12 pointer-events-none">
-          <div class="animate-float-slow w-full flex justify-end"><img src="assets/opt_9996d6b2.webp" style="border-radius: 24px;" alt="Rare Beauty Product" class="w-full max-w-[280px] md:w-[350px] lg:w-[420px] h-auto object-contain mix-blend-multiply relative z-0" /></div>
+          <div class="w-full flex justify-end"><img src="assets/opt_9996d6b2.webp" style="border-radius: 24px;" alt="Rare Beauty Product" class="w-full max-w-[280px] md:w-[350px] lg:w-[420px] h-auto object-contain mix-blend-multiply relative z-0" /></div>
         </div>
 
       </div>
@@ -574,182 +565,6 @@
     </div>
   </section>
 
-  <!-- Ask Our Beauty Experts Section -->
-  <section class="w-full bg-[#FDF9F2] py-24 md:py-32 relative overflow-hidden">
-    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center mb-16">
-        <div class="w-16 h-16 mx-auto bg-[#38251E] rounded-full flex items-center justify-center text-[#D0B286] mb-6 shadow-md">
-          <i class="fa-solid fa-leaf text-2xl"></i>
-        </div>
-        <h2 class="font-serif text-[2.5rem] md:text-[3.25rem] text-[#38251E] leading-tight tracking-tight mb-4">
-          Ask Our <span class="text-[#D0B286] font-light italic">Beauty Experts</span>
-        </h2>
-      </div>
-
-      <div class="space-y-4 accordion-container">
-        
-        <!-- FAQ 1 -->
-        <div class="faq-item border border-[#38251E]/10 rounded-2xl overflow-hidden bg-white transition-colors duration-300">
-          <button class="faq-btn w-full px-6 py-5 md:p-8 flex justify-between items-center text-left focus:outline-none bg-transparent">
-            <h3 class="font-serif text-[1.1rem] md:text-2xl text-[#38251E] pr-8">Which serum is right for my skin?</h3>
-            <span class="faq-icon flex-shrink-0 w-10 h-10 rounded-full border border-[#38251E]/20 flex items-center justify-center text-[#38251E] transition-transform duration-300">
-              <i class="fa-solid fa-plus"></i>
-            </span>
-          </button>
-          <div class="faq-content overflow-hidden transition-[max-height] duration-500 ease-in-out" style="max-height: 0;">
-            <div class="px-6 pb-6 md:px-8 md:pb-8">
-              <p class="font-serif text-[#38251E]/80 text-[1rem] md:text-[1.05rem] leading-relaxed">
-                It depends entirely on your primary skin goals. For hydration, look for Hyaluronic Acid. To brighten and even tone, Vitamin C is essential. If you are targeting fine lines, a gentle Retinol or Bakuchiol serum will be most effective.
-              </p>
-            </div>
-          </div>
-        </div>
-
-        <!-- FAQ 2 -->
-        <div class="faq-item border border-[#38251E]/10 rounded-2xl overflow-hidden bg-white transition-colors duration-300">
-          <button class="faq-btn w-full px-6 py-5 md:p-8 flex justify-between items-center text-left focus:outline-none bg-transparent">
-            <h3 class="font-serif text-[1.1rem] md:text-2xl text-[#38251E] pr-8">How do I find my undertone?</h3>
-            <span class="faq-icon flex-shrink-0 w-10 h-10 rounded-full border border-[#38251E]/20 flex items-center justify-center text-[#38251E] transition-transform duration-300">
-              <i class="fa-solid fa-plus"></i>
-            </span>
-          </button>
-          <div class="faq-content overflow-hidden transition-[max-height] duration-500 ease-in-out" style="max-height: 0;">
-            <div class="px-6 pb-6 md:px-8 md:pb-8">
-              <p class="font-serif text-[#38251E]/80 text-[1rem] md:text-[1.05rem] leading-relaxed">
-                Look at the veins on your wrist in natural light. Blue or purple indicates a cool undertone; green indicates warm. If you see a mix of both, you likely have a neutral undertone. Silver jewelry flatters cool tones, while gold flatters warm.
-              </p>
-            </div>
-          </div>
-        </div>
-
-        <!-- FAQ 3 -->
-        <div class="faq-item border border-[#38251E]/10 rounded-2xl overflow-hidden bg-white transition-colors duration-300">
-          <button class="faq-btn w-full px-6 py-5 md:p-8 flex justify-between items-center text-left focus:outline-none bg-transparent">
-            <h3 class="font-serif text-[1.1rem] md:text-2xl text-[#38251E] pr-8">What should I use for a simple morning routine?</h3>
-            <span class="faq-icon flex-shrink-0 w-10 h-10 rounded-full border border-[#38251E]/20 flex items-center justify-center text-[#38251E] transition-transform duration-300">
-              <i class="fa-solid fa-plus"></i>
-            </span>
-          </button>
-          <div class="faq-content overflow-hidden transition-[max-height] duration-500 ease-in-out" style="max-height: 0;">
-            <div class="px-6 pb-6 md:px-8 md:pb-8">
-              <p class="font-serif text-[#38251E]/80 text-[1rem] md:text-[1.05rem] leading-relaxed">
-                A simple, effective morning routine consists of three core steps: gently cleanse, apply a targeted serum or moisturizer to hydrate, and finish with a broad-spectrum SPF to protect your skin throughout the day.
-              </p>
-            </div>
-          </div>
-        </div>
-
-        <!-- FAQ 4 -->
-        <div class="faq-item border border-[#38251E]/10 rounded-2xl overflow-hidden bg-white transition-colors duration-300">
-          <button class="faq-btn w-full px-6 py-5 md:p-8 flex justify-between items-center text-left focus:outline-none bg-transparent">
-            <h3 class="font-serif text-[1.1rem] md:text-2xl text-[#38251E] pr-8">How can I choose the right foundation shade?</h3>
-            <span class="faq-icon flex-shrink-0 w-10 h-10 rounded-full border border-[#38251E]/20 flex items-center justify-center text-[#38251E] transition-transform duration-300">
-              <i class="fa-solid fa-plus"></i>
-            </span>
-          </button>
-          <div class="faq-content overflow-hidden transition-[max-height] duration-500 ease-in-out" style="max-height: 0;">
-            <div class="px-6 pb-6 md:px-8 md:pb-8">
-              <p class="font-serif text-[#38251E]/80 text-[1rem] md:text-[1.05rem] leading-relaxed">
-                Always test foundation on your jawline, not your hand, and check the match in natural daylight. The right shade will disappear into your skin without leaving a harsh line of demarcation between your face and neck.
-              </p>
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-  <!-- Our Promise Section -->
-  <section class="w-full bg-[#FDF9F2] py-24 md:py-32 border-t border-[#38251E]/10">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      
-      <!-- Top Title (Header) -->
-      <div class="mb-16">
-        <h2 class="font-serif text-[3.5rem] md:text-[3.5rem] text-[#38251E] leading-none tracking-tight mb-4">
-          Our <span class="text-[#CBA87F]">promise</span>
-        </h2>
-        <p class="font-serif text-[#38251E] text-lg md:text-[1.1rem] font-medium max-w-sm pb-2">
-          Three promises we check every product against.
-        </p>
-      </div>
-
-      <!-- Content Grid -->
-      <div class="flex flex-col lg:flex-row gap-16 lg:gap-24 items-center">
-        
-        <!-- Left Image Collage -->
-        <div class="w-full lg:w-1/2 flex gap-4 md:gap-5 justify-center lg:justify-start h-[500px] md:h-[600px]">
-          
-          <!-- Tall Arch Left Image -->
-          <div class="w-1/2 h-full rounded-t-[150px] border-[1.5px] border-[#38251E] overflow-hidden shadow-sm">
-             <img src="assets/opt_5bbd95d4.webp" class="w-full h-full object-cover" alt="Applying lipstick" />
-          </div>
-
-          <!-- Stacked Right Images -->
-          <div class="w-1/2 h-full flex flex-col gap-4 md:gap-5">
-            <!-- Top Right -->
-            <div class="w-full h-[48%] rounded-r-[150px] border-[1.5px] border-[#38251E] overflow-hidden shadow-sm">
-               <img src="assets/opt_18fe0c4a.webp" class="w-full h-full object-cover" alt="Makeup brushes" />
-            </div>
-            <!-- Bottom Right -->
-            <div class="w-full h-[48%] rounded-r-[150px] border-[1.5px] border-[#38251E] overflow-hidden shadow-sm">
-               <img src="assets/bridal_composite.webp" class="w-full h-full object-cover object-top" alt="Applying eye makeup" />
-            </div>
-          </div>
-        </div>
-
-        <!-- Right Text List -->
-        <div class="w-full lg:w-1/2 flex flex-col gap-12">
-          
-          <!-- Row 1 -->
-          <div class="flex items-start gap-6 md:gap-8">
-            <!-- Icon -->
-            <div class="flex-shrink-0 w-16 h-16 bg-[#EFDFCA]/50 rounded-[18px] flex items-center justify-center text-[#A68A61]">
-               <svg class="w-8 h-8" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z" /></svg>
-            </div>
-            <div class="pt-1">
-              <h3 class="font-serif text-[#38251E] text-2xl md:text-3xl mb-3 tracking-wide">Cruelty free, always</h3>
-              <p class="font-serif text-[#38251E]/90 text-[16px] leading-[1.6]">
-                No animal testing at any stage, by us or by our suppliers, in any market.
-              </p>
-            </div>
-          </div>
-
-          <!-- Row 2 -->
-          <div class="flex items-start gap-6 md:gap-8">
-            <!-- Icon -->
-            <div class="flex-shrink-0 w-16 h-16 bg-[#EFDFCA]/50 rounded-[18px] flex items-center justify-center text-[#A68A61]">
-               <svg class="w-8 h-8" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21 3C21 3 18.5 2 13 4C7.5 6 3 11.5 3 18C3 19 4 21 5 21C6 21 8 20 13 18C18 16 21 11.5 21 6C21 4.5 21 3 21 3Z" /><path stroke-linecap="round" stroke-linejoin="round" d="M3 21L11.5 12.5" /></svg>
-            </div>
-            <div class="pt-1">
-              <h3 class="font-serif text-[#38251E] text-2xl md:text-3xl mb-3 tracking-wide">Clean formulas</h3>
-              <p class="font-serif text-[#38251E]/90 text-[16px] leading-[1.6]">
-                Free from parabens, sulfates, mineral oil and artificial colour. Every ingredient is explained on our site.
-              </p>
-            </div>
-          </div>
-
-          <!-- Row 3 -->
-          <div class="flex items-start gap-6 md:gap-8">
-            <!-- Icon -->
-            <div class="flex-shrink-0 w-16 h-16 bg-[#EFDFCA]/50 rounded-[18px] flex items-center justify-center text-[#A68A61]">
-               <svg class="w-8 h-8" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0l3.181 3.183a8.25 8.25 0 0013.803-3.7M4.031 9.865a8.25 8.25 0 0113.803-3.7l3.181 3.182m0-4.991v4.99" /></svg>
-            </div>
-            <div class="pt-1">
-              <h3 class="font-serif text-[#38251E] text-2xl md:text-3xl mb-3 tracking-wide">Sustainable packaging</h3>
-              <p class="font-serif text-[#38251E]/90 text-[16px] leading-[1.6]">
-                Refillable glass, recycled cartons and plant-based inks. Return an empty and we reuse it.
-              </p>
-            </div>
-          </div>
-
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-
-
   <!-- Footer -->
   <footer class="w-full bg-[#C3A47C] pt-20 pb-16 mt-10">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -850,9 +665,9 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
   <script src='main.js'></script>
-    <script src="premium-animations.js"></script>
+    
     <script src="custom-additions.js"></script>
-</body>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script><script src="animations.js"></script></body>
 </html>
 
 

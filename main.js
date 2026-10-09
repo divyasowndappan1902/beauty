@@ -157,97 +157,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 
-// New Custom Sections Animations & Interactions
+// Replaced by animations.js (AOS and GSAP implementation)
+// Note: Accordion logic remains below if needed, but we'll re-implement if necessary.
 document.addEventListener("DOMContentLoaded", () => {
-    
-    // 1. Reveal Animations (Intersection Observer for opacity-0 elements)
-    const observerOptions = {
-        root: null,
-        rootMargin: '0px',
-        threshold: 0.15
-    };
-
-    const revealObserver = new IntersectionObserver((entries, observer) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                const el = entry.target;
-                
-                // General fade up classes
-                if (el.classList.contains('opacity-0')) {
-                    el.classList.remove('opacity-0', 'translate-y-10', 'scale-95');
-                    el.classList.add('opacity-100', 'translate-y-0', 'scale-100');
-                }
-                
-                // Specific line progress (Formulation & Journey timelines)
-                if (el.classList.contains('formulation-steps-container') || el.classList.contains('journey-timeline-container')) {
-                    const lines = el.querySelectorAll('.formulation-line-progress, .journey-line-progress');
-                    lines.forEach(line => {
-                        line.classList.remove('scale-y-0');
-                        line.classList.add('scale-y-100');
-                    });
-                }
-                
-                // Specific Counter Animation (Beauty by Numbers)
-                if (el.classList.contains('stat-card')) {
-                    const counter = el.querySelector('.counter');
-                    const counterFloat = el.querySelector('.counter-float');
-                    
-                    if (counter && !counter.classList.contains('counted')) {
-                        counter.classList.add('counted');
-                        const target = +counter.getAttribute('data-target');
-                        const duration = 2000;
-                        const frameRate = 30;
-                        const totalFrames = Math.round((duration / 1000) * frameRate);
-                        let frame = 0;
-                        
-                        const updateCounter = () => {
-                            frame++;
-                            const progress = frame / totalFrames;
-                            const current = target * (1 - (1 - progress) * (1 - progress));
-                            
-                            if (frame < totalFrames) {
-                                counter.innerText = Math.ceil(current).toLocaleString();
-                                requestAnimationFrame(updateCounter);
-                            } else {
-                                counter.innerText = target.toLocaleString();
-                            }
-                        };
-                        requestAnimationFrame(updateCounter);
-                    }
-
-                    if (counterFloat && !counterFloat.classList.contains('counted')) {
-                        counterFloat.classList.add('counted');
-                        const target = +counterFloat.getAttribute('data-target');
-                        const duration = 2000;
-                        const frameRate = 30;
-                        const totalFrames = Math.round((duration / 1000) * frameRate);
-                        let frame = 0;
-                        
-                        const updateCounter = () => {
-                            frame++;
-                            const progress = frame / totalFrames;
-                            const current = target * (1 - (1 - progress) * (1 - progress));
-                            
-                            if (frame < totalFrames) {
-                                counterFloat.innerText = current.toFixed(1);
-                                requestAnimationFrame(updateCounter);
-                            } else {
-                                counterFloat.innerText = target.toFixed(1);
-                            }
-                        };
-                        requestAnimationFrame(updateCounter);
-                    }
-                }
-                
-                observer.unobserve(el);
-            }
-        });
-    }, observerOptions);
-
-    // Observe elements
-    const elementsToReveal = document.querySelectorAll('.formulation-step, .formulation-steps-container, .stat-card, .journey-step, .journey-timeline-container, .transform-card, .guide-card');
-    elementsToReveal.forEach(el => revealObserver.observe(el));
-
     // 2. Accordion Interaction (Ask Our Beauty Experts)
     const faqBtns = document.querySelectorAll('.faq-btn');
     faqBtns.forEach(btn => {
