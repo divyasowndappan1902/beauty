@@ -125,7 +125,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const heroSection = document.querySelector('main');
         if (heroSection && typeof gsap !== 'undefined') {
             const smokyText = heroSection.querySelectorAll('.smoky-text');
-            const otherHeroText = heroSection.querySelectorAll('p, a, button');
+            const otherHeroText = heroSection.querySelectorAll('p:not(.glass-card *), a, button, .hero-stat');
             const heroImg = heroSection.querySelector('img');
             
             if (smokyText.length > 0) {
@@ -432,7 +432,7 @@ document.addEventListener("DOMContentLoaded", () => {
         });
 
         // Category Filters
-        const filters = document.querySelectorAll('section:nth-of-type(3) .flex-wrap > a');
+        const filters = document.querySelectorAll('section:nth-of-type(3) .flex-wrap > a, section:nth-of-type(3) .flex-wrap > button');
         if (filters.length > 0 && typeof gsap !== 'undefined') {
             gsap.fromTo(filters, { opacity: 0, x: -10 }, { opacity: 1, x: 0, stagger: 0.1, duration: 0.5, scrollTrigger: { trigger: filters[0].parentElement, start: 'top 85%' }});
         }

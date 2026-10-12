@@ -37,8 +37,8 @@ window.addEventListener("load", () => {
     // 2. Headings Scroll Animation (Cosmetics style: elegant fade + slight upward drift)
     const headings = document.querySelectorAll("h1, h2, h3");
     headings.forEach((heading) => {
-      // Skip headings inside preloader and smoky text
-      if (heading.closest('#preloader') || heading.classList.contains('gsap-preloader-text') || heading.classList.contains('smoky-text')) return;
+      // Skip headings inside preloader, hero main, glass cards, and smoky text
+      if (heading.closest('#preloader') || heading.closest('main') || heading.closest('.glass-card') || heading.classList.contains('gsap-preloader-text') || heading.classList.contains('smoky-text')) return;
       
       gsap.fromTo(heading, 
         { y: 30, opacity: 0 },
@@ -62,8 +62,8 @@ document.addEventListener("click", (e) => {
     // Handle links
     const link = e.target.closest("a");
     if (link) {
-        // Keep functional dashboard tab switches and history back
-        if (link.hasAttribute("data-target") || link.classList.contains("nav-link") || link.classList.contains("go-back-btn")) {
+        // Keep functional dashboard tab switches, history back, and category filters
+        if (link.hasAttribute("data-target") || link.classList.contains("nav-link") || link.classList.contains("go-back-btn") || link.classList.contains("category-filter-btn") || link.hasAttribute("data-filter") || link.classList.contains("dashboard-logo") || link.hasAttribute("data-refresh")) {
             return;
         }
 
@@ -83,9 +83,9 @@ document.addEventListener("click", (e) => {
     // Handle buttons
     const btn = e.target.closest("button");
     if (btn) {
-        // Allow password visibility toggle and go back button
+        // Allow password visibility toggle, go back button, and category filters
         const onclickAttr = btn.getAttribute("onclick") || "";
-        if (btn.id === "mobile-menu-toggle" || btn.classList.contains("faq-btn") || btn.id === "dashboard-menu-toggle" || onclickAttr.includes("pwd") || onclickAttr.includes("togglePwd") || onclickAttr.includes("history") || btn.classList.contains("go-back-btn")) {
+        if (btn.id === "mobile-menu-toggle" || btn.classList.contains("faq-btn") || btn.id === "dashboard-menu-toggle" || onclickAttr.includes("pwd") || onclickAttr.includes("togglePwd") || onclickAttr.includes("history") || btn.classList.contains("go-back-btn") || btn.classList.contains("category-filter-btn") || btn.hasAttribute("data-filter") || btn.classList.contains("dashboard-logo") || btn.hasAttribute("data-refresh")) {
             return;
         }
 

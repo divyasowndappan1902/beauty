@@ -13,6 +13,40 @@
     <!-- Font Awesome & Google Material Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons|Material+Symbols+Outlined" />
+  <style>
+    html {
+      overflow-x: hidden;
+      overflow-y: auto;
+      scroll-behavior: smooth;
+    }
+    body {
+      overflow-x: clip;
+      overflow-y: visible;
+    }
+    body::-webkit-scrollbar {
+      display: none;
+      width: 0px;
+      height: 0px;
+    }
+    body {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+    html::-webkit-scrollbar {
+      width: 10px;
+    }
+    html::-webkit-scrollbar-track {
+      background: #FDF9F2;
+    }
+    html::-webkit-scrollbar-thumb {
+      background: #C59A65;
+      border-radius: 9999px;
+      border: 2px solid #FDF9F2;
+    }
+    html::-webkit-scrollbar-thumb:hover {
+      background: #9A723D;
+    }
+  </style>
 <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"></head>
 <body class="bg-[#FDF9F2] text-[#38251E] font-sans antialiased overflow-x-clip pt-[72px] md:pt-[80px]">
 
@@ -300,112 +334,153 @@
         </div>
         
         <!-- Category Filters -->
-        <div class="flex flex-wrap gap-x-3 gap-y-3 pb-2">
-          <a href="404.html" class="px-6 py-2.5 rounded-full bg-[#38251E] text-white text-[12px] font-sans font-medium tracking-wide uppercase hover:bg-[#2A1B15] transition-colors">All</a>
-          <a href="404.html" class="px-6 py-2.5 rounded-full bg-white border border-[#38251E]/10 text-[#38251E] text-[12px] font-sans font-medium tracking-wide uppercase hover:bg-[#38251E]/5 transition-colors shadow-sm">Skincare</a>
-          <a href="404.html" class="px-6 py-2.5 rounded-full bg-white border border-[#38251E]/10 text-[#38251E] text-[12px] font-sans font-medium tracking-wide uppercase hover:bg-[#38251E]/5 transition-colors shadow-sm">Makeup</a>
-          <a href="404.html" class="px-6 py-2.5 rounded-full bg-white border border-[#38251E]/10 text-[#38251E] text-[12px] font-sans font-medium tracking-wide uppercase hover:bg-[#38251E]/5 transition-colors shadow-sm">Ingredients</a>
-          <a href="404.html" class="px-6 py-2.5 rounded-full bg-white border border-[#38251E]/10 text-[#38251E] text-[12px] font-sans font-medium tracking-wide uppercase hover:bg-[#38251E]/5 transition-colors shadow-sm">Rituals</a>
+        <div class="flex flex-wrap gap-x-3 gap-y-3 pb-2" id="category-filter-container">
+          <button type="button" data-filter="all" class="category-filter-btn px-6 py-2.5 rounded-full bg-[#38251E] text-white text-[12px] font-sans font-medium tracking-wide uppercase transition-all duration-300 shadow-sm cursor-pointer hover:opacity-90">All</button>
+          <button type="button" data-filter="skincare" class="category-filter-btn px-6 py-2.5 rounded-full bg-white border border-[#38251E]/10 text-[#38251E] text-[12px] font-sans font-medium tracking-wide uppercase hover:bg-[#38251E]/5 transition-all duration-300 shadow-sm cursor-pointer">Skincare</button>
+          <button type="button" data-filter="makeup" class="category-filter-btn px-6 py-2.5 rounded-full bg-white border border-[#38251E]/10 text-[#38251E] text-[12px] font-sans font-medium tracking-wide uppercase hover:bg-[#38251E]/5 transition-all duration-300 shadow-sm cursor-pointer">Makeup</button>
+          <button type="button" data-filter="ingredients" class="category-filter-btn px-6 py-2.5 rounded-full bg-white border border-[#38251E]/10 text-[#38251E] text-[12px] font-sans font-medium tracking-wide uppercase hover:bg-[#38251E]/5 transition-all duration-300 shadow-sm cursor-pointer">Ingredients</button>
+          <button type="button" data-filter="rituals" class="category-filter-btn px-6 py-2.5 rounded-full bg-white border border-[#38251E]/10 text-[#38251E] text-[12px] font-sans font-medium tracking-wide uppercase hover:bg-[#38251E]/5 transition-all duration-300 shadow-sm cursor-pointer">Rituals</button>
         </div>
       </div>
 
       <!-- Articles Grid -->
-      <div class="flex flex-col gap-6 md:gap-8">
+      <div id="articles-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 transition-all duration-300">
         
-        <!-- Top Row (2 columns: ~60/40) -->
-        <div class="flex flex-col lg:flex-row gap-6 md:gap-8">
+        <!-- Card 1 (Skincare - Featured Hero) -->
+        <a href="404.html" data-category="skincare" class="article-card article-card-featured relative w-full h-[450px] md:h-[500px] lg:col-span-2 rounded-[24px] overflow-hidden group shadow-md block transition-all duration-500 hover:shadow-xl">
+          <img src="assets/opt_98f184ba.webp" alt="Serum bottle" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
+          <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
           
-          <!-- Card 1 -->
-          <a href="404.html" class="relative w-full lg:w-[60%] h-[400px] md:h-[500px] rounded-[24px] overflow-hidden group shadow-md block">
-            <img src="assets/opt_98f184ba.webp" alt="Serum bottle" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
-            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
-            
-            <div class="absolute bottom-0 left-0 w-full p-8 md:p-10 flex flex-col justify-end">
-              <span class="font-serif text-[#D0B286] text-[15px] mb-3">Skincare</span>
-              <h3 class="font-serif text-white text-[2rem] md:text-[2.5rem] leading-tight tracking-tight mb-4 max-w-lg">
-                Why Your Barrier Matters More Than Any Serum
-              </h3>
-              <p class="text-white/90 text-[14px] md:text-[15px] mb-4 font-serif">
-                Strengthen First, Then Treat. A Calmer Routine Starts Here.
-              </p>
-              <span class="text-white/70 text-[12px] font-sans tracking-wide uppercase">6 Min Read</span>
-            </div>
-          </a>
+          <div class="absolute bottom-0 left-0 w-full p-8 md:p-10 flex flex-col justify-end">
+            <span class="font-serif text-[#D0B286] text-[15px] mb-3">Skincare</span>
+            <h3 class="font-serif text-white text-[2rem] md:text-[2.5rem] leading-tight tracking-tight mb-4 max-w-lg">
+              Why Your Barrier Matters More Than Any Serum
+            </h3>
+            <p class="text-white/90 text-[14px] md:text-[15px] mb-4 font-serif">
+              Strengthen First, Then Treat. A Calmer Routine Starts Here.
+            </p>
+            <span class="text-white/70 text-[12px] font-sans tracking-wide uppercase">6 Min Read</span>
+          </div>
+        </a>
 
-          <!-- Card 2 -->
-          <a href="404.html" class="relative w-full lg:w-[40%] h-[400px] md:h-[500px] rounded-[24px] overflow-hidden group shadow-md block">
-            <img src="assets/opt_c62a3a32.webp" alt="Skin focus" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
-            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
-            
-            <div class="absolute bottom-0 left-0 w-full p-8 md:p-10 flex flex-col justify-end">
-              <span class="font-serif text-[#D0B286] text-[15px] mb-3">Makeup</span>
-              <h3 class="font-serif text-white text-[2rem] md:text-[2.25rem] leading-tight tracking-tight mb-4">
-                The Soft-Focus Base: Skin That Looks Like Skin
-              </h3>
-              <p class="text-white/90 text-[14px] md:text-[15px] mb-4 font-serif">
-                Lightweight Layers And One Clever Blending Trick.
-              </p>
-              <span class="text-white/70 text-[12px] font-sans tracking-wide uppercase">6 Min Read</span>
-            </div>
-          </a>
-
-        </div>
-
-        <!-- Bottom Row (3 columns: 33/33/33) -->
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
+        <!-- Card 2 (Makeup) -->
+        <a href="404.html" data-category="makeup" class="article-card relative w-full h-[450px] md:h-[500px] rounded-[24px] overflow-hidden group shadow-md block transition-all duration-500 hover:shadow-xl">
+          <img src="assets/opt_c62a3a32.webp" alt="Skin focus" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
+          <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
           
-          <!-- Card 3 -->
-          <a href="404.html" class="relative w-full h-[450px] rounded-[24px] overflow-hidden group shadow-md block">
-            <img src="assets/opt_5bbd95d4.webp" alt="Powder" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
-            <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent"></div>
-            
-            <div class="absolute bottom-0 left-0 w-full p-8 flex flex-col justify-end">
-              <span class="font-serif text-[#D0B286] text-[14px] mb-2">Ingredients</span>
-              <h3 class="font-serif text-white text-[1.75rem] leading-tight tracking-tight mb-3">
-                Vitamin C, Demystified
-              </h3>
-              <p class="text-white/90 text-[14px] mb-4 font-serif leading-snug">
-                Which Forms Work, How To Store Them And Who Should Wait.
-              </p>
-              <span class="text-white/70 text-[12px] font-sans tracking-wide uppercase">6 Min Read</span>
-            </div>
-          </a>
+          <div class="absolute bottom-0 left-0 w-full p-8 md:p-10 flex flex-col justify-end">
+            <span class="font-serif text-[#D0B286] text-[15px] mb-3">Makeup</span>
+            <h3 class="font-serif text-white text-[2rem] md:text-[2.25rem] leading-tight tracking-tight mb-4">
+              The Soft-Focus Base: Skin That Looks Like Skin
+            </h3>
+            <p class="text-white/90 text-[14px] md:text-[15px] mb-4 font-serif">
+              Lightweight Layers And One Clever Blending Trick.
+            </p>
+            <span class="text-white/70 text-[12px] font-sans tracking-wide uppercase">6 Min Read</span>
+          </div>
+        </a>
 
-          <!-- Card 4 -->
-          <a href="404.html" class="relative w-full h-[450px] rounded-[24px] overflow-hidden group shadow-md block">
-            <img src="assets/opt_5197818d.webp" alt="Cream Jar" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
-            <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent"></div>
-            
-            <div class="absolute bottom-0 left-0 w-full p-8 flex flex-col justify-end">
-              <span class="font-serif text-[#D0B286] text-[14px] mb-2">Makeup</span>
-              <h3 class="font-serif text-white text-[1.75rem] leading-tight tracking-tight mb-3">
-                Red Lips For Every Undertone
-              </h3>
-              <p class="text-white/90 text-[14px] mb-4 font-serif leading-snug">
-                Find Your Perfect Red, From Cherry To Deep Wine.
-              </p>
-              <span class="text-white/70 text-[12px] font-sans tracking-wide uppercase">6 Min Read</span>
-            </div>
-          </a>
+        <!-- Card 3 (Ingredients) -->
+        <a href="404.html" data-category="ingredients" class="article-card relative w-full h-[450px] md:h-[450px] rounded-[24px] overflow-hidden group shadow-md block transition-all duration-500 hover:shadow-xl">
+          <img src="assets/opt_5bbd95d4.webp" alt="Powder" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
+          <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent"></div>
+          
+          <div class="absolute bottom-0 left-0 w-full p-8 flex flex-col justify-end">
+            <span class="font-serif text-[#D0B286] text-[14px] mb-2">Ingredients</span>
+            <h3 class="font-serif text-white text-[1.75rem] leading-tight tracking-tight mb-3">
+              Vitamin C, Demystified
+            </h3>
+            <p class="text-white/90 text-[14px] mb-4 font-serif leading-snug">
+              Which Forms Work, How To Store Them And Who Should Wait.
+            </p>
+            <span class="text-white/70 text-[12px] font-sans tracking-wide uppercase">6 Min Read</span>
+          </div>
+        </a>
 
-          <!-- Card 5 -->
-          <a href="404.html" class="relative w-full h-[450px] rounded-[24px] overflow-hidden group shadow-md block">
-            <img src="assets/opt_f1f1fde0.webp" alt="Red Lips" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
-            <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent"></div>
-            
-            <div class="absolute bottom-0 left-0 w-full p-8 flex flex-col justify-end">
-              <span class="font-serif text-[#D0B286] text-[14px] mb-2">Skincare</span>
-              <h3 class="font-serif text-white text-[1.75rem] leading-tight tracking-tight mb-3">
-                Winter-Proofing Your Skin In October
-              </h3>
-              <p class="text-white/90 text-[14px] mb-4 font-serif leading-snug">
-                Switch Textures Before The Cold Arrives.
-              </p>
-              <span class="text-white/70 text-[12px] font-sans tracking-wide uppercase">6 Min Read</span>
-            </div>
-          </a>
+        <!-- Card 4 (Makeup) -->
+        <a href="404.html" data-category="makeup" class="article-card relative w-full h-[450px] md:h-[450px] rounded-[24px] overflow-hidden group shadow-md block transition-all duration-500 hover:shadow-xl">
+          <img src="assets/opt_5197818d.webp" alt="Cream Jar" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
+          <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent"></div>
+          
+          <div class="absolute bottom-0 left-0 w-full p-8 flex flex-col justify-end">
+            <span class="font-serif text-[#D0B286] text-[14px] mb-2">Makeup</span>
+            <h3 class="font-serif text-white text-[1.75rem] leading-tight tracking-tight mb-3">
+              Red Lips For Every Undertone
+            </h3>
+            <p class="text-white/90 text-[14px] mb-4 font-serif leading-snug">
+              Find Your Perfect Red, From Cherry To Deep Wine.
+            </p>
+            <span class="text-white/70 text-[12px] font-sans tracking-wide uppercase">6 Min Read</span>
+          </div>
+        </a>
 
-        </div>
+        <!-- Card 5 (Skincare) -->
+        <a href="404.html" data-category="skincare" class="article-card relative w-full h-[450px] md:h-[450px] rounded-[24px] overflow-hidden group shadow-md block transition-all duration-500 hover:shadow-xl">
+          <img src="assets/opt_f1f1fde0.webp" alt="Red Lips" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
+          <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent"></div>
+          
+          <div class="absolute bottom-0 left-0 w-full p-8 flex flex-col justify-end">
+            <span class="font-serif text-[#D0B286] text-[14px] mb-2">Skincare</span>
+            <h3 class="font-serif text-white text-[1.75rem] leading-tight tracking-tight mb-3">
+              Winter-Proofing Your Skin In October
+            </h3>
+            <p class="text-white/90 text-[14px] mb-4 font-serif leading-snug">
+              Switch Textures Before The Cold Arrives.
+            </p>
+            <span class="text-white/70 text-[12px] font-sans tracking-wide uppercase">6 Min Read</span>
+          </div>
+        </a>
+
+        <!-- Card 6 (Rituals) -->
+        <a href="404.html" data-category="rituals" class="article-card relative w-full h-[450px] md:h-[450px] rounded-[24px] overflow-hidden group shadow-md block transition-all duration-500 hover:shadow-xl">
+          <img src="assets/opt_2c92114b.webp" alt="Night ritual" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
+          <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent"></div>
+          
+          <div class="absolute bottom-0 left-0 w-full p-8 flex flex-col justify-end">
+            <span class="font-serif text-[#D0B286] text-[14px] mb-2">Rituals</span>
+            <h3 class="font-serif text-white text-[1.75rem] leading-tight tracking-tight mb-3">
+              The 10-Minute Evening Reset
+            </h3>
+            <p class="text-white/90 text-[14px] mb-4 font-serif leading-snug">
+              Calming Botanical Blends To Restore Skin Overnight.
+            </p>
+            <span class="text-white/70 text-[12px] font-sans tracking-wide uppercase">7 Min Read</span>
+          </div>
+        </a>
+
+        <!-- Card 7 (Rituals) -->
+        <a href="404.html" data-category="rituals" class="article-card relative w-full h-[450px] md:h-[450px] rounded-[24px] overflow-hidden group shadow-md block transition-all duration-500 hover:shadow-xl">
+          <img src="assets/opt_b1a3fb35.webp" alt="Morning Gua Sha" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
+          <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent"></div>
+          
+          <div class="absolute bottom-0 left-0 w-full p-8 flex flex-col justify-end">
+            <span class="font-serif text-[#D0B286] text-[14px] mb-2">Rituals</span>
+            <h3 class="font-serif text-white text-[1.75rem] leading-tight tracking-tight mb-3">
+              Morning Sun Ritual & Facial Massage
+            </h3>
+            <p class="text-white/90 text-[14px] mb-4 font-serif leading-snug">
+              Awaken Lymphatic Flow With Warm Oils And Rose Quartz.
+            </p>
+            <span class="text-white/70 text-[12px] font-sans tracking-wide uppercase">5 Min Read</span>
+          </div>
+        </a>
+
+        <!-- Card 8 (Ingredients) -->
+        <a href="404.html" data-category="ingredients" class="article-card relative w-full h-[450px] md:h-[450px] rounded-[24px] overflow-hidden group shadow-md block transition-all duration-500 hover:shadow-xl">
+          <img src="assets/opt_6abe0cfb.webp" alt="Botanical Extracts" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
+          <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent"></div>
+          
+          <div class="absolute bottom-0 left-0 w-full p-8 flex flex-col justify-end">
+            <span class="font-serif text-[#D0B286] text-[14px] mb-2">Ingredients</span>
+            <h3 class="font-serif text-white text-[1.75rem] leading-tight tracking-tight mb-3">
+              Niacinamide & Peptides Explained
+            </h3>
+            <p class="text-white/90 text-[14px] mb-4 font-serif leading-snug">
+              The Bio-Active Synergy That Calms Redness In Days.
+            </p>
+            <span class="text-white/70 text-[12px] font-sans tracking-wide uppercase">8 Min Read</span>
+          </div>
+        </a>
 
       </div>
     </div>
@@ -666,7 +741,62 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
   <script src='main.js'></script>
     
-    <script src="custom-additions.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const filterBtns = document.querySelectorAll('.category-filter-btn');
+      const articleCards = document.querySelectorAll('.article-card');
+      const featuredCard = document.querySelector('.article-card-featured');
+
+      if (!filterBtns.length || !articleCards.length) return;
+
+      filterBtns.forEach(btn => {
+        btn.addEventListener('click', (e) => {
+          e.preventDefault();
+          e.stopPropagation();
+
+          const targetFilter = btn.getAttribute('data-filter');
+
+          // 1. Update button visual active states
+          filterBtns.forEach(b => {
+            b.classList.remove('bg-[#38251E]', 'text-white', 'shadow-md');
+            b.classList.add('bg-white', 'border', 'border-[#38251E]/10', 'text-[#38251E]', 'shadow-sm');
+          });
+          btn.classList.add('bg-[#38251E]', 'text-white', 'shadow-md');
+          btn.classList.remove('bg-white', 'border', 'border-[#38251E]/10', 'text-[#38251E]', 'shadow-sm');
+
+          // 2. Filter matching article cards with smooth transition
+          articleCards.forEach(card => {
+            const cardCat = card.getAttribute('data-category');
+            if (targetFilter === 'all' || cardCat === targetFilter) {
+              card.classList.remove('hidden');
+              card.style.opacity = '0';
+              card.style.transform = 'translateY(14px) scale(0.98)';
+              setTimeout(() => {
+                card.style.transition = 'opacity 0.35s ease, transform 0.35s ease';
+                card.style.opacity = '1';
+                card.style.transform = 'translateY(0) scale(1)';
+              }, 30);
+            } else {
+              card.classList.add('hidden');
+            }
+          });
+
+          // 3. Featured card sizing
+          if (featuredCard) {
+            if (targetFilter === 'all') {
+              featuredCard.classList.add('lg:col-span-2');
+            } else {
+              featuredCard.classList.remove('lg:col-span-2');
+            }
+          }
+
+          // 4. Refresh scroll triggers
+          if (window.ScrollTrigger) ScrollTrigger.refresh();
+          if (window.AOS) AOS.refresh();
+        });
+      });
+    });
+  </script>
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script><script src="animations.js"></script></body>
 </html>
 

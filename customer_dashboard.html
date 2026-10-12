@@ -168,7 +168,9 @@
   <!-- Sidebar -->
   <aside id="dashboard-sidebar" class="w-64 bg-white border-r border-[#38251E]/10 flex flex-col h-full  flex fixed md:relative z-[60] transform -translate-x-full md:translate-x-0 transition-transform duration-300 shadow-sm z-10">
     <div class="h-20 flex items-center px-8 border-b border-[#38251E]/10">
-      <img src="assets/logo_0027.webp" alt="Logo" class="h-8 w-auto object-contain" />
+      <a href="customer_dashboard.html" class="dashboard-logo flex items-center cursor-pointer transition-opacity hover:opacity-80" title="Refresh Dashboard" onclick="window.location.reload(); return false;">
+        <img src="assets/logo_0027.webp" alt="Logo" class="h-8 w-auto object-contain" />
+      </a>
     </div>
     
     <nav id="dashboard-nav" class="flex-1 px-4 py-8 space-y-2 overflow-y-auto">
