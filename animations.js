@@ -48,20 +48,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
 
-    // 3. Mobile menu GSAP stagger
-    const mobileToggle = document.getElementById('mobile-menu-toggle');
-    const mobileMenu = document.getElementById('mobile-menu');
-    if (mobileToggle && mobileMenu) {
-        mobileToggle.addEventListener('click', () => {
-            if (!mobileMenu.classList.contains('hidden') && typeof gsap !== 'undefined') {
-                const links = mobileMenu.querySelectorAll('a');
-                gsap.fromTo(links, 
-                    { opacity: 0, x: -20 }, 
-                    { opacity: 1, x: 0, stagger: 0.1, duration: 0.4, ease: 'power2.out' }
-                );
-            }
-        });
-    }
+    // 3. Mobile menu GSAP stagger is handled centrally in main.js alongside scroll-lock
 
     // 4. Footer subtle fade-up
     const footer = document.querySelector('footer');

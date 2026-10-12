@@ -69,6 +69,12 @@
             overflow-y: auto;
             scroll-behavior: smooth;
         }
+        html.mobile-menu-active,
+        body.mobile-menu-active {
+            overflow: hidden !important;
+            overflow-y: hidden !important;
+            touch-action: none !important;
+        }
         body {
             overflow-x: clip;
             overflow-y: visible;
